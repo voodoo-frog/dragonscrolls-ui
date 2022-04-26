@@ -3,6 +3,14 @@
     "index": "barbarian",
     "name": "Barbarian",
     "hit_die": 12,
+    "description": "A fierce warrior of primitive background who can enter a battle rage.",
+    "primary_ability": [
+      {
+        "index": "str",
+        "name": "STR",
+        "url": "/api/ability-scores/str"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 2,
@@ -196,6 +204,14 @@
   {
     "index": "bard",
     "name": "Bard",
+    "description": "A bard is a performer who uses his or her talents and magic to add to the fun of the party.",
+    "primary_ability": [
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/ability-scores/cha"
+      }
+    ],
     "hit_die": 8,
     "proficiency_choices": [
       {
@@ -738,6 +754,14 @@
   {
     "index": "cleric",
     "name": "Cleric",
+    "description": "A priestly champion who wields divine magic in service of a higher power. Known for his or her iterative devotion to the tenets of the divine.",
+    "primary_ability": [
+      {
+        "index": "wis",
+        "name": "WIS",
+        "url": "/api/ability-scores/wis"
+      }
+    ],
     "hit_die": 8,
     "proficiency_choices": [
       {
@@ -1048,6 +1072,14 @@
   {
     "index": "druid",
     "name": "Druid",
+    "description": "A priest of the Old Faith, wielding the powers of nature—moonlight and plant growth, fire and lightning, and the wilds—Druids combine the powers of nature and faith to fight the forces of evil.",
+    "primary_ability": [
+      {
+        "index": "wis",
+        "name": "WIS",
+        "url": "/api/ability-scores/wis"
+      }
+    ],
     "hit_die": 8,
     "proficiency_choices": [
       {
@@ -1355,6 +1387,19 @@
     "index": "fighter",
     "name": "Fighter",
     "hit_die": 10,
+    "description": "Fighters are well-rounded fighters who use a variety of weapons and armor to take down their foes. They are versatile fighters who can use any weapon and armor they possess, and can use a variety of tactics to defeat their foes.",
+    "primary_ability": [
+      {
+        "index": "str",
+        "name": "STR",
+        "url": "/api/ability-scores/str"
+      },
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/ability-scores/dex"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 2,
@@ -1641,6 +1686,19 @@
     "index": "monk",
     "name": "Monk",
     "hit_die": 8,
+    "description": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection, a monk might train as an adventurer, soldier, or even the greatest sage.",
+    "primary_ability": [
+      {
+        "index": "wis",
+        "name": "WIS",
+        "url": "/api/ability-scores/wis"
+      },
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/ability-scores/dex"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 1,
@@ -1967,6 +2025,19 @@
     "index": "paladin",
     "name": "Paladin",
     "hit_die": 10,
+    "description": "A holy warrior bound to a sacred oath.",
+    "primary_ability": [
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/ability-scores/cha"
+      },
+      {
+        "index": "str",
+        "name": "STR",
+        "url": "/api/ability-scores/str"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 2,
@@ -2248,6 +2319,19 @@
     "index": "ranger",
     "name": "Ranger",
     "hit_die": 10,
+    "description": "A warrior who uses stealth and martial prowess to overcome enemies in battle. Rangers excel at stalking down enemies, tracking them down effectively, and hunting them down effectively.",
+    "primary_ability": [
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/ability-scores/dex"
+      },
+      {
+        "index": "wis",
+        "name": "WIS",
+        "url": "/api/ability-scores/wis"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 3,
@@ -2569,6 +2653,14 @@
     "index": "rogue",
     "name": "Rogue",
     "hit_die": 8,
+    "description": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies at the right time. Burglar, thief, assassin, and spy.",
+    "primary_ability": [
+      {
+        "index": "dex",
+        "name": "DEX",
+        "url": "/api/ability-scores/dex"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 4,
@@ -2894,6 +2986,14 @@
     "index": "sorcerer",
     "name": "Sorcerer",
     "hit_die": 6,
+    "description": "A spellcaster who draws on inherent magic from a gift or bloodline, shaping that magic into destructive force to protect or heal others.",
+    "primary_ability": [
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/ability-scores/cha"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 2,
@@ -3137,6 +3237,14 @@
     "index": "warlock",
     "name": "Warlock",
     "hit_die": 8,
+    "description": "A warlock is a wielder of magic that is derived from a bargain with an extraplanar entity. A warlock might be an archfey, a fiend, an elemental, or some other being who requires a pact to join the ranks of chaos. Warlocks might also be hybrids who combine the best of both worlds. Some prefer the role of a minion, while other might simply walk the extraplanar path.",
+    "primary_ability": [
+      {
+        "index": "cha",
+        "name": "CHA",
+        "url": "/api/ability-scores/cha"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 2,
@@ -3406,6 +3514,14 @@
     "index": "wizard",
     "name": "Wizard",
     "hit_die": 6,
+    "description": "A wizard is a scholarly magic-user who draws on inherent magic from a well of infinite potential. A wizard might use such inherent magic to protect a town, create a death trap for a villain, or hold a sacred text secret. However, a wizard might also use their power to protect themselves, to fight evil, or to help their allies.",
+    "primary_ability": [
+      {
+        "index": "int",
+        "name": "INT",
+        "url": "/api/ability-scores/int"
+      }
+    ],
     "proficiency_choices": [
       {
         "choose": 2,

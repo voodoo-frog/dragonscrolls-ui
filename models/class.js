@@ -13,6 +13,8 @@ const ClassSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  description: String,
+  primary_ability: Array,
   proficiency_choices: Array,
   proficiencies: Array,
   saving_throws: Array,
@@ -34,6 +36,8 @@ const ClassSchema = new mongoose.Schema({
   },
   proficiencies: Array,
   subclasses: Array,
+  spellcasting: Object,
+  spells: String,
   url: {
     type: String,
     required: true,
