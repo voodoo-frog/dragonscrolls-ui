@@ -13,6 +13,7 @@ const ClassSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  brief: String,
   description: String,
   primary_ability: Array,
   proficiency_choices: Array,

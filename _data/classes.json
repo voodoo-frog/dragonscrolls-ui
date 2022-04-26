@@ -3,7 +3,8 @@
     "index": "barbarian",
     "name": "Barbarian",
     "hit_die": 12,
-    "description": "A fierce warrior of primitive background who can enter a battle rage.",
+    "brief": "A fierce warrior of primitive background who can enter a battle rage.",
+    "description": "For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
     "primary_ability": [
       {
         "index": "str",
@@ -204,7 +205,8 @@
   {
     "index": "bard",
     "name": "Bard",
-    "description": "A bard is a performer who uses his or her talents and magic to add to the fun of the party.",
+    "brief": "An inspiring magician whose power echoes the music of creation.",
+    "description": "Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain.",
     "primary_ability": [
       {
         "index": "cha",
@@ -754,7 +756,8 @@
   {
     "index": "cleric",
     "name": "Cleric",
-    "description": "A priestly champion who wields divine magic in service of a higher power. Known for his or her iterative devotion to the tenets of the divine.",
+    "brief": "A priestly champion who wields divine magic in service of a higher power.",
+    "description": "Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.",
     "primary_ability": [
       {
         "index": "wis",
@@ -1072,7 +1075,8 @@
   {
     "index": "druid",
     "name": "Druid",
-    "description": "A priest of the Old Faith, wielding the powers of nature—moonlight and plant growth, fire and lightning, and the wilds—Druids combine the powers of nature and faith to fight the forces of evil.",
+    "brief": "A priest of the Old Faith, wielding the powers of nature and adopting animal forms.",
+    "description": "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature's resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature's indomitable will.",
     "primary_ability": [
       {
         "index": "wis",
@@ -1387,7 +1391,8 @@
     "index": "fighter",
     "name": "Fighter",
     "hit_die": 10,
-    "description": "Fighters are well-rounded fighters who use a variety of weapons and armor to take down their foes. They are versatile fighters who can use any weapon and armor they possess, and can use a variety of tactics to defeat their foes.",
+    "brief": "A master of martial combat, skilled with a variety of weapons and armor.",
+    "description": "Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face.",
     "primary_ability": [
       {
         "index": "str",
@@ -1686,7 +1691,8 @@
     "index": "monk",
     "name": "Monk",
     "hit_die": 8,
-    "description": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection, a monk might train as an adventurer, soldier, or even the greatest sage.",
+    "brief": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
+    "description": "Monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.",
     "primary_ability": [
       {
         "index": "wis",
@@ -2025,7 +2031,8 @@
     "index": "paladin",
     "name": "Paladin",
     "hit_die": 10,
-    "description": "A holy warrior bound to a sacred oath.",
+    "brief": "A holy warrior bound to a sacred oath.",
+    "description": "Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.",
     "primary_ability": [
       {
         "index": "cha",
@@ -2319,7 +2326,8 @@
     "index": "ranger",
     "name": "Ranger",
     "hit_die": 10,
-    "description": "A warrior who uses stealth and martial prowess to overcome enemies in battle. Rangers excel at stalking down enemies, tracking them down effectively, and hunting them down effectively.",
+    "brief": "A warrior who uses combats threats on the edges of civilization.",
+    "description": "Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.",
     "primary_ability": [
       {
         "index": "dex",
@@ -2653,7 +2661,8 @@
     "index": "rogue",
     "name": "Rogue",
     "hit_die": 8,
-    "description": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies at the right time. Burglar, thief, assassin, and spy.",
+    "brief": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
+    "description": "Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.",
     "primary_ability": [
       {
         "index": "dex",
@@ -2986,7 +2995,8 @@
     "index": "sorcerer",
     "name": "Sorcerer",
     "hit_die": 6,
-    "description": "A spellcaster who draws on inherent magic from a gift or bloodline, shaping that magic into destructive force to protect or heal others.",
+    "brief": "A spellcaster who draws on inherent magic from a gift or bloodline.",
+    "description": "Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. No one chooses sorcery; the power chooses the sorcerer.",
     "primary_ability": [
       {
         "index": "cha",
@@ -3237,7 +3247,8 @@
     "index": "warlock",
     "name": "Warlock",
     "hit_die": 8,
-    "description": "A warlock is a wielder of magic that is derived from a bargain with an extraplanar entity. A warlock might be an archfey, a fiend, an elemental, or some other being who requires a pact to join the ranks of chaos. Warlocks might also be hybrids who combine the best of both worlds. Some prefer the role of a minion, while other might simply walk the extraplanar path.",
+    "brief": "A wielder of magic that is derived from a bargain with an extraplanar entity.",
+    "description": "Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular.",
     "primary_ability": [
       {
         "index": "cha",
@@ -3514,7 +3525,8 @@
     "index": "wizard",
     "name": "Wizard",
     "hit_die": 6,
-    "description": "A wizard is a scholarly magic-user who draws on inherent magic from a well of infinite potential. A wizard might use such inherent magic to protect a town, create a death trap for a villain, or hold a sacred text secret. However, a wizard might also use their power to protect themselves, to fight evil, or to help their allies.",
+    "brief": "A scholarly magic-user capable of manipulating the structures of reality.",
+    "description": "Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, brute-force mind control, and much more.",
     "primary_ability": [
       {
         "index": "int",
