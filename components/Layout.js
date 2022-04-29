@@ -12,7 +12,12 @@ function Layout({ children }) {
 
   useEffect(() => {
     if (classes) {
-      setDndClasses(classes.data);
+      const sorted = classes.data.sort((a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      });
+      setDndClasses(sorted);
     }
   }, [classes]);
 

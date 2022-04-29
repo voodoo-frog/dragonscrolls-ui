@@ -2168,9 +2168,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "arcane-foci",
-      "name": "Arcane Foci",
-      "url": "/api/equipment-categories/arcane-foci"
+      "index": "arcane-focus",
+      "name": "Arcane Focus",
+      "url": "/api/equipment-categories/arcane-focus"
     },
     "cost": {
       "quantity": 10,
@@ -2191,9 +2191,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "arcane-foci",
-      "name": "Arcane Foci",
-      "url": "/api/equipment-categories/arcane-foci"
+      "index": "arcane-focus",
+      "name": "Arcane Focus",
+      "url": "/api/equipment-categories/arcane-focus"
     },
     "cost": {
       "quantity": 20,
@@ -2214,9 +2214,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "arcane-foci",
-      "name": "Arcane Foci",
-      "url": "/api/equipment-categories/arcane-foci"
+      "index": "arcane-focus",
+      "name": "Arcane Focus",
+      "url": "/api/equipment-categories/arcane-focus"
     },
     "cost": {
       "quantity": 10,
@@ -2237,9 +2237,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "arcane-foci",
-      "name": "Arcane Foci",
-      "url": "/api/equipment-categories/arcane-foci"
+      "index": "arcane-focus",
+      "name": "Arcane Focus",
+      "url": "/api/equipment-categories/arcane-focus"
     },
     "cost": {
       "quantity": 5,
@@ -2260,9 +2260,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "arcane-foci",
-      "name": "Arcane Foci",
-      "url": "/api/equipment-categories/arcane-foci"
+      "index": "arcane-focus",
+      "name": "Arcane Focus",
+      "url": "/api/equipment-categories/arcane-focus"
     },
     "cost": {
       "quantity": 10,
@@ -2796,9 +2796,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "druidic-foci",
-      "name": "Druidic Foci",
-      "url": "/api/equipment-categories/druidic-foci"
+      "index": "druidic-focus",
+      "name": "Druidic Focus",
+      "url": "/api/equipment-categories/druidic-focus"
     },
     "cost": {
       "quantity": 1,
@@ -2819,9 +2819,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "druidic-foci",
-      "name": "Druidic Foci",
-      "url": "/api/equipment-categories/druidic-foci"
+      "index": "druidic-focus",
+      "name": "Druidic Focus",
+      "url": "/api/equipment-categories/druidic-focus"
     },
     "cost": {
       "quantity": 1,
@@ -2842,9 +2842,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "druidic-foci",
-      "name": "Druidic Foci",
-      "url": "/api/equipment-categories/druidic-foci"
+      "index": "druidic-focus",
+      "name": "Druidic Focus",
+      "url": "/api/equipment-categories/druidic-focus"
     },
     "cost": {
       "quantity": 5,
@@ -2865,9 +2865,9 @@
       "url": "/api/equipment-categories/adventuring-gear"
     },
     "gear_category": {
-      "index": "druidic-foci",
-      "name": "Druidic Foci",
-      "url": "/api/equipment-categories/druidic-foci"
+      "index": "druidic-focus",
+      "name": "Druidic Focus",
+      "url": "/api/equipment-categories/druidic-focus"
     },
     "cost": {
       "quantity": 10,

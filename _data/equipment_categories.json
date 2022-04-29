@@ -3373,8 +3373,8 @@
     "url": "/api/equipment-categories/waterborne-vehicles"
   },
   {
-    "index": "arcane-foci",
-    "name": "Arcane Foci",
+    "index": "arcane-focus",
+    "name": "Arcane Focus",
     "equipment": [
       {
         "index": "crystal",
@@ -3402,11 +3402,11 @@
         "url": "/api/equipment/wand"
       }
     ],
-    "url": "/api/equipment-categories/arcane-foci"
+    "url": "/api/equipment-categories/arcane-focus"
   },
   {
-    "index": "druidic-foci",
-    "name": "Druidic Foci",
+    "index": "druidic-focus",
+    "name": "Druidic Focus",
     "equipment": [
       {
         "index": "sprig-of-mistletoe",
@@ -3429,7 +3429,7 @@
         "url": "/api/equipment/yew-wand"
       }
     ],
-    "url": "/api/equipment-categories/druidic-foci"
+    "url": "/api/equipment-categories/druidic-focus"
   },
   {
     "index": "holy-symbols",
