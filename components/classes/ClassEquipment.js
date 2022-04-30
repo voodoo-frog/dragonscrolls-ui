@@ -67,7 +67,9 @@ function ClassEquipment({ starting_equipment, starting_equipment_options }) {
         })}
 
         <List.Item>
-          {equipment.slice(0, -1).join(', ') + ' and ' + equipment.slice(-1)}
+          {equipment.length > 1
+            ? equipment.slice(0, -1).join(', ') + ' and ' + equipment.slice(-1)
+            : equipment[0]}
         </List.Item>
       </List>
     </>
