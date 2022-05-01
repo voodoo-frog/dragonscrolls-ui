@@ -2,14 +2,17 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 import Class from '../../models/class';
+import Feature from '../../models/feature';
+
 import dbConnect from '../../lib/dbConnect';
 import { AspectRatio, Title, Text, Container } from '@mantine/core';
 
 import ClassEquipment from '../../components/classes/ClassEquipment';
 import ClassProficiencies from '../../components/classes/ClassProficiencies';
 import ClassHitPoints from '../../components/classes/ClassHitPoints';
+import ClassFeatures from '../../components/classes/ClassFeatures';
 
-function SingleClass({ singleClass }) {
+function SingleClass({ singleClass, classFeatures }) {
   const {
     index,
     hit_die,
@@ -20,6 +23,7 @@ function SingleClass({ singleClass }) {
     proficiency_choices,
     starting_equipment,
     starting_equipment_options,
+    spellcasting,
   } = singleClass;
 
   const [armorProficiencies, setArmorProficiencies] = useState([]);
@@ -64,7 +68,7 @@ function SingleClass({ singleClass }) {
         />
       </AspectRatio>
       <Text>{description}</Text>
-      <Title order={3}>Class Features</Title>
+      <Title order={2}>Class Features</Title>
       <Text>As a {index}, you gain the following class features.</Text>
       {/* Hit Points */}
       <ClassHitPoints hit_die={hit_die} index={index} />
@@ -82,6 +86,11 @@ function SingleClass({ singleClass }) {
         starting_equipment={starting_equipment}
         starting_equipment_options={starting_equipment_options}
       />
+      {/* Class Features */}
+      <ClassFeatures
+        classFeatures={classFeatures}
+        spellcasting={spellcasting}
+      />
     </Container>
   );
 }
@@ -93,5 +102,17 @@ export async function getServerSideProps({ params }) {
   const singleClass = await Class.findOne(params).lean();
   singleClass._id = singleClass._id.toString();
 
-  return { props: { singleClass } };
+  const features = await (
+    await Feature.find().lean()
+  ).filter((feature) => feature.class.index === singleClass.index);
+
+  features.forEach((feature) => {
+    feature._id = feature._id.toString();
+  });
+
+  const classFeatures = [
+    ...new Map(features.map((item) => [item.name, item])).values(),
+  ];
+
+  return { props: { singleClass, classFeatures } };
 }

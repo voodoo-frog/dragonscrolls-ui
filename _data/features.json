@@ -74,6 +74,7 @@
     },
     "name": "Primal Path",
     "level": 3,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
@@ -203,7 +204,7 @@
       "name": "Barbarian",
       "url": "/api/classes/barbarian"
     },
-    "name": "Brutal Critical (1 die)",
+    "name": "Brutal Critical",
     "level": 9,
     "prerequisites": [],
     "desc": [
@@ -270,7 +271,7 @@
       "name": "Barbarian",
       "url": "/api/classes/barbarian"
     },
-    "name": "Brutal Critical (2 dice)",
+    "name": "Brutal Critical",
     "level": 13,
     "prerequisites": [],
     "desc": [
@@ -335,7 +336,7 @@
       "name": "Barbarian",
       "url": "/api/classes/barbarian"
     },
-    "name": "Brutal Critical (3 dice)",
+    "name": "Brutal Critical",
     "level": 17,
     "prerequisites": [],
     "desc": [
@@ -395,7 +396,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Spellcasting: Bard",
+    "name": "Spellcasting",
     "level": 1,
     "prerequisites": [],
     "desc": [
@@ -411,7 +412,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Bardic Inspiration (d6)",
+    "name": "Bardic Inspiration",
     "level": 1,
     "prerequisites": [],
     "desc": [
@@ -443,7 +444,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Song of Rest (d6)",
+    "name": "Song of Rest",
     "level": 2,
     "prerequisites": [],
     "desc": [
@@ -461,6 +462,7 @@
     },
     "name": "Bard College",
     "level": 3,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "At 3rd level, you delve into the advanced techniques of a bard college of your choice: the College of Lore or the College of Valor, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th and 14th level."
@@ -644,7 +646,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Bardic Inspiration (d8)",
+    "name": "Bardic Inspiration",
     "level": 5,
     "prerequisites": [],
     "desc": [
@@ -726,7 +728,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Song of Rest (d8)",
+    "name": "Song of Rest",
     "level": 9,
     "prerequisites": [],
     "desc": [
@@ -742,7 +744,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Bardic Inspiration (d10)",
+    "name": "Bardic Inspiration",
     "level": 10,
     "prerequisites": [],
     "desc": [
@@ -899,7 +901,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Song of Rest (d10)",
+    "name": "Song of Rest",
     "level": 13,
     "prerequisites": [],
     "desc": [
@@ -952,7 +954,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Bardic Inspiration (d12)",
+    "name": "Bardic Inspiration",
     "level": 15,
     "prerequisites": [],
     "desc": [
@@ -984,7 +986,7 @@
       "name": "Bard",
       "url": "/api/classes/bard"
     },
-    "name": "Song of Rest (d12)",
+    "name": "Song of Rest",
     "level": 17,
     "prerequisites": [],
     "desc": [
@@ -1047,12 +1049,10 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Spellcasting: Cleric",
+    "name": "Spellcasting",
     "level": 1,
     "prerequisites": [],
-    "desc": [
-      "As a conduit for divine power, you can cast cleric spells."
-    ],
+    "desc": ["As a conduit for divine power, you can cast cleric spells."],
     "reference": "/api/classes/cleric/spellcasting",
     "url": "/api/features/spellcasting-cleric"
   },
@@ -1065,6 +1065,7 @@
     },
     "name": "Divine Domain",
     "level": 1,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Only the Life domain is detailed in the Open Game Licensed SRD. Additional Domains are described in the official rulebooks or products from other publishers.",
@@ -1135,7 +1136,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Channel Divinity (1/rest)",
+    "name": "Channel Divinity",
     "level": 2,
     "prerequisites": [],
     "desc": [
@@ -1238,7 +1239,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Destroy Undead (CR 1/2 or below)",
+    "name": "Destroy Undead",
     "level": 5,
     "prerequisites": [],
     "desc": [
@@ -1253,7 +1254,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Channel Divinity (2/rest)",
+    "name": "Channel Divinity",
     "level": 6,
     "prerequisites": [],
     "desc": [
@@ -1319,7 +1320,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Destroy Undead (CR 1 or below)",
+    "name": "Destroy Undead",
     "level": 8,
     "prerequisites": [],
     "desc": [
@@ -1388,7 +1389,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Destroy Undead (CR 2 or below)",
+    "name": "Destroy Undead",
     "level": 11,
     "prerequisites": [],
     "desc": [
@@ -1418,7 +1419,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Destroy Undead (CR 3 or below)",
+    "name": "Destroy Undead",
     "level": 14,
     "prerequisites": [],
     "desc": [
@@ -1448,7 +1449,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Destroy Undead (CR 4 or below)",
+    "name": "Destroy Undead",
     "level": 17,
     "prerequisites": [],
     "desc": [
@@ -1478,7 +1479,7 @@
       "name": "Cleric",
       "url": "/api/classes/cleric"
     },
-    "name": "Channel Divinity (3/rest)",
+    "name": "Channel Divinity",
     "level": 18,
     "prerequisites": [],
     "desc": [
@@ -1523,7 +1524,7 @@
       "name": "Druid",
       "url": "/api/classes/druid"
     },
-    "name": "Spellcasting: Druid",
+    "name": "Spellcasting",
     "level": 1,
     "prerequisites": [],
     "desc": [
@@ -1554,7 +1555,7 @@
       "name": "Druid",
       "url": "/api/classes/druid"
     },
-    "name": "Wild Shape (CR 1/4 or below, no flying or swim speed)",
+    "name": "Wild Shape",
     "level": 2,
     "prerequisites": [],
     "desc": [
@@ -1579,6 +1580,7 @@
     },
     "name": "Druid Circle",
     "level": 2,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "At 2nd level, you choose to identify with a circle of druids: the Circle of the Land or the Circle of the Moon, both detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
@@ -1893,7 +1895,7 @@
       "name": "Druid",
       "url": "/api/classes/druid"
     },
-    "name": "Wild Shape (CR 1/2 or below, no flying speed)",
+    "name": "Wild Shape",
     "level": 4,
     "prerequisites": [],
     "desc": [
@@ -1996,7 +1998,7 @@
       "name": "Druid",
       "url": "/api/classes/druid"
     },
-    "name": "Wild Shape (CR 1 or below)",
+    "name": "Wild Shape",
     "level": 8,
     "prerequisites": [],
     "desc": [
@@ -2263,9 +2265,7 @@
     "name": "Fighting Style: Defense",
     "level": 1,
     "prerequisites": [],
-    "desc": [
-      "While you are wearing armor, you gain a +1 bonus to AC."
-    ],
+    "desc": ["While you are wearing armor, you gain a +1 bonus to AC."],
     "parent": {
       "index": "fighter-fighting-style",
       "name": "Fighting Style",
@@ -2375,7 +2375,7 @@
       "name": "Fighter",
       "url": "/api/classes/fighter"
     },
-    "name": "Action Surge (1 use)",
+    "name": "Action Surge",
     "level": 2,
     "prerequisites": [],
     "desc": [
@@ -2393,6 +2393,7 @@
     },
     "name": "Martial Archetype",
     "level": 3,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the class description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level."
@@ -2506,7 +2507,7 @@
       "name": "Fighter",
       "url": "/api/classes/fighter"
     },
-    "name": "Indomitable (1 use)",
+    "name": "Indomitable",
     "level": 9,
     "prerequisites": [],
     "desc": [
@@ -2579,7 +2580,7 @@
       "name": "Fighter",
       "url": "/api/classes/fighter"
     },
-    "name": "Extra Attack (2)",
+    "name": "Extra Attack",
     "level": 11,
     "prerequisites": [],
     "desc": [
@@ -2609,7 +2610,7 @@
       "name": "Fighter",
       "url": "/api/classes/fighter"
     },
-    "name": "Indomitable (2 uses)",
+    "name": "Indomitable",
     "level": 13,
     "prerequisites": [],
     "desc": [
@@ -2674,7 +2675,7 @@
       "name": "Fighter",
       "url": "/api/classes/fighter"
     },
-    "name": "Action Surge (2 uses)",
+    "name": "Action Surge",
     "level": 17,
     "prerequisites": [],
     "desc": [
@@ -2690,7 +2691,7 @@
       "name": "Fighter",
       "url": "/api/classes/fighter"
     },
-    "name": "Indomitable (3 uses)",
+    "name": "Indomitable",
     "level": 17,
     "prerequisites": [],
     "desc": [
@@ -2740,7 +2741,7 @@
       "name": "Fighter",
       "url": "/api/classes/fighter"
     },
-    "name": "Extra Attack (3)",
+    "name": "Extra Attack",
     "level": 20,
     "prerequisites": [],
     "desc": [
@@ -2872,6 +2873,7 @@
     },
     "name": "Monastic Tradition",
     "level": 3,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "When you reach 3rd level, you commit yourself to a monastic tradition: the Way of the Open Hand, the Way of Shadow, or the Way of the Four Elements, all detailed at the end of the class description. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
@@ -3338,9 +3340,7 @@
     "name": "Fighting Style: Defense",
     "level": 2,
     "prerequisites": [],
-    "desc": [
-      "While you are wearing armor, you gain a +1 bonus to AC."
-    ],
+    "desc": ["While you are wearing armor, you gain a +1 bonus to AC."],
     "parent": {
       "index": "paladin-fighting-style",
       "name": "Fighting Style",
@@ -3415,7 +3415,7 @@
       "name": "Paladin",
       "url": "/api/classes/paladin"
     },
-    "name": "Spellcasting: Paladin",
+    "name": "Spellcasting",
     "level": 2,
     "prerequisites": [],
     "desc": [
@@ -3463,6 +3463,7 @@
     },
     "name": "Sacred Oath",
     "level": 3,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "When you reach 3rd level, you swear the oath that binds you as a paladin forever. Up to this time you have been in a preparatory stage, committed to the path but not yet sworn to it. Now you choose the Oath of Devotion, the Oath of the Ancients, or the Oath of Vengeance, all detailed at the end of the class description.",
@@ -3734,9 +3735,7 @@
     "name": "Aura improvements",
     "level": 18,
     "prerequisites": [],
-    "desc": [
-      "At 18th level, the range of your auras increase to 30 feet."
-    ],
+    "desc": ["At 18th level, the range of your auras increase to 30 feet."],
     "url": "/api/features/aura-improvements"
   },
   {
@@ -3783,7 +3782,7 @@
       "name": "Ranger",
       "url": "/api/classes/ranger"
     },
-    "name": "Favored Enemy (1 type)",
+    "name": "Favored Enemy",
     "level": 1,
     "prerequisites": [],
     "desc": [
@@ -3802,7 +3801,7 @@
       "name": "Ranger",
       "url": "/api/classes/ranger"
     },
-    "name": "Natural Explorer (1 terrain type)",
+    "name": "Natural Explorer",
     "level": 1,
     "prerequisites": [],
     "desc": [
@@ -3891,9 +3890,7 @@
     "name": "Fighting Style: Defense",
     "level": 2,
     "prerequisites": [],
-    "desc": [
-      "While you are wearing armor, you gain a +1 bonus to AC."
-    ],
+    "desc": ["While you are wearing armor, you gain a +1 bonus to AC."],
     "parent": {
       "index": "ranger-fighting-style",
       "name": "Fighting Style",
@@ -3948,7 +3945,7 @@
       "name": "Ranger",
       "url": "/api/classes/ranger"
     },
-    "name": "Spellcasting: Ranger",
+    "name": "Spellcasting",
     "level": 2,
     "prerequisites": [],
     "desc": [
@@ -3966,6 +3963,7 @@
     },
     "name": "Ranger Archetype",
     "level": 3,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "At 3rd level, you choose an archetype that you strive to emulate: Hunter or Beast Master, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 7th, 11th, and 15th level."
@@ -4145,7 +4143,7 @@
       "name": "Ranger",
       "url": "/api/classes/ranger"
     },
-    "name": "Favored Enemy (2 types)",
+    "name": "Favored Enemy",
     "level": 6,
     "prerequisites": [],
     "desc": [
@@ -4164,7 +4162,7 @@
       "name": "Ranger",
       "url": "/api/classes/ranger"
     },
-    "name": "Natural Explorer (2 terrain types)",
+    "name": "Natural Explorer",
     "level": 6,
     "prerequisites": [],
     "desc": [
@@ -4241,9 +4239,7 @@
     "name": "Defensive Tactics: Escape the Horde",
     "level": 7,
     "prerequisites": [],
-    "desc": [
-      "Opportunity attacks against you are made with disadvantage."
-    ],
+    "desc": ["Opportunity attacks against you are made with disadvantage."],
     "parent": {
       "index": "defensive-tactics",
       "name": "Defensive Tactics",
@@ -4291,9 +4287,7 @@
     "name": "Defensive Tactics: Steel Will",
     "level": 7,
     "prerequisites": [],
-    "desc": [
-      "You have advantage on saving throws against being frightened."
-    ],
+    "desc": ["You have advantage on saving throws against being frightened."],
     "parent": {
       "index": "defensive-tactics",
       "name": "Defensive Tactics",
@@ -4339,7 +4333,7 @@
       "name": "Ranger",
       "url": "/api/classes/ranger"
     },
-    "name": "Natural Explorer (3 terrain types)",
+    "name": "Natural Explorer",
     "level": 10,
     "prerequisites": [],
     "desc": [
@@ -4483,7 +4477,7 @@
       "name": "Ranger",
       "url": "/api/classes/ranger"
     },
-    "name": "Favored Enemy (3 enemies)",
+    "name": "Favored Enemy",
     "level": 14,
     "prerequisites": [],
     "desc": [
@@ -4868,6 +4862,7 @@
     },
     "name": "Roguish Archetype",
     "level": 3,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities. The Thief archetype is detailed at the bottom of this page. Additional archetypes are available in the original source material. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level."
@@ -5297,7 +5292,7 @@
       "name": "Sorcerer",
       "url": "/api/classes/sorcerer"
     },
-    "name": "Spellcasting: Sorcerer",
+    "name": "Spellcasting",
     "level": 1,
     "prerequisites": [],
     "desc": [
@@ -5315,6 +5310,7 @@
     },
     "name": "Sorcerous Origin",
     "level": 1,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline or Wild Magic, both detailed at the end of the class description.",
@@ -6241,6 +6237,7 @@
     },
     "name": "Otherworldly Patron",
     "level": 1,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "At 1st level, you have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level."
@@ -6400,7 +6397,7 @@
     "prerequisites": [
       {
         "type": "Spell",
-        "spell": "/api/spells/dominate-monster"
+        "spell": "/api/spells/eldritch-blast"
       }
     ],
     "desc": [
@@ -6463,9 +6460,7 @@
     "name": "Eldritch Invocation: Beguiling Influence",
     "level": 2,
     "prerequisites": [],
-    "desc": [
-      "You gain proficiency in the Deception and Persuasion skills."
-    ],
+    "desc": ["You gain proficiency in the Deception and Persuasion skills."],
     "parent": {
       "index": "eldritch-invocations-1",
       "name": "Eldritch Invocations",
@@ -6551,12 +6546,10 @@
     "prerequisites": [
       {
         "type": "Spell",
-        "spell": "/api/spells/dominate-monster"
+        "spell": "/api/spells/eldritch-blast"
       }
     ],
-    "desc": [
-      "When you cast eldritch blast, its range is 300 feet."
-    ],
+    "desc": ["When you cast eldritch blast, its range is 300 feet."],
     "parent": {
       "index": "eldritch-invocations-1",
       "name": "Eldritch Invocations",
@@ -6574,9 +6567,7 @@
     "name": "Eldritch Invocation: Eyes of the Rune Keeper",
     "level": 2,
     "prerequisites": [],
-    "desc": [
-      "You can read all writing."
-    ],
+    "desc": ["You can read all writing."],
     "parent": {
       "index": "eldritch-invocations-1",
       "name": "Eldritch Invocations",
@@ -6676,7 +6667,7 @@
     "prerequisites": [
       {
         "type": "Spell",
-        "spell": "/api/spells/dominate-monster"
+        "spell": "/api/spells/eldritch-blast"
       }
     ],
     "desc": [
@@ -7646,7 +7637,7 @@
       "name": "Warlock",
       "url": "/api/classes/warlock"
     },
-    "name": "Mystic Arcanum (6th level)",
+    "name": "Mystic Arcanum",
     "level": 11,
     "prerequisites": [],
     "desc": [
@@ -7783,7 +7774,7 @@
       "name": "Warlock",
       "url": "/api/classes/warlock"
     },
-    "name": "Mystic Arcanum (7th level)",
+    "name": "Mystic Arcanum",
     "level": 13,
     "prerequisites": [],
     "desc": [
@@ -7822,7 +7813,7 @@
       "name": "Warlock",
       "url": "/api/classes/warlock"
     },
-    "name": "Mystic Arcanum (8th level)",
+    "name": "Mystic Arcanum",
     "level": 15,
     "prerequisites": [],
     "desc": [
@@ -7959,7 +7950,7 @@
       "name": "Warlock",
       "url": "/api/classes/warlock"
     },
-    "name": "Mystic Arcanum (9th level)",
+    "name": "Mystic Arcanum",
     "level": 17,
     "prerequisites": [],
     "desc": [
@@ -8217,7 +8208,7 @@
       "name": "Wizard",
       "url": "/api/classes/wizard"
     },
-    "name": "Spellcasting: Wizard",
+    "name": "Spellcasting",
     "level": 1,
     "prerequisites": [],
     "desc": [
@@ -8251,6 +8242,7 @@
     },
     "name": "Arcane Tradition",
     "level": 2,
+    "category": "subclass",
     "prerequisites": [],
     "desc": [
       "When you reach 2nd level, you choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation, all detailed at the end of the class description.",
