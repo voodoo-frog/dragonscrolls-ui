@@ -35,7 +35,7 @@ export default function Home({ classes }) {
 export async function getServerSideProps() {
   await dbConnect();
 
-  /* find all the data in our database */
+  /* Classes */
   const result = await Class.find({});
   const classes = result.map((doc) => {
     const dndClass = doc.toObject();

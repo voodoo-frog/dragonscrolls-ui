@@ -69,7 +69,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function Navbar({ dndClasses }) {
+function Navbar({ dndClasses, races }) {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles();
 
@@ -136,7 +136,7 @@ function Navbar({ dndClasses }) {
               <Group ml={50} spacing={5} className={classes.links}>
                 <Menu
                   control={
-                    <Button variant="subtle" color="red" href="/classes">
+                    <Button variant="subtle" color="red">
                       Classes
                     </Button>
                   }
@@ -163,8 +163,15 @@ function Navbar({ dndClasses }) {
                         ))
                     : null}
                 </Menu>
-                <Button href="/classes">Spells</Button>
-                <Button href="/classes">Races</Button>
+                <Button href="/spells">Spells</Button>
+                <Button
+                  component="a"
+                  href="/races"
+                  variant="subtle"
+                  color="red"
+                >
+                  Races
+                </Button>
                 <Button href="/classes">Backgrounds</Button>
                 <Button href="/classes">Equipment</Button>
                 <Button href="/classes">Basic Rules</Button>
@@ -188,6 +195,7 @@ function Navbar({ dndClasses }) {
           </div>
         </Header>
       </MediaQuery>
+
       <Drawer
         position="right"
         opened={opened}
@@ -216,6 +224,19 @@ function Navbar({ dndClasses }) {
           </Accordion.Item>
           <Accordion.Item label="Spells">
             <Anchor href="/spells">All spells</Anchor>
+          </Accordion.Item>
+          <Accordion.Item label="Races">
+            <Anchor href="/races">Overview</Anchor>
+            {races && races.length > 0
+              ? races.map((c) => (
+                  <>
+                    <Divider my="xs" />
+                    <Anchor key={c.index} href={`/races/${c.index}`}>
+                      {c.name}
+                    </Anchor>
+                  </>
+                ))
+              : null}
           </Accordion.Item>
         </Accordion>
         <Button

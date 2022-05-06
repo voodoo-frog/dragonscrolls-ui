@@ -1,8 +1,70 @@
 [
   {
+    "index": "dragonborn",
+    "name": "Dragonborn",
+    "speed": 30,
+    "brief": "Dragonborn look very much like dragons standing erect in humanoid form, though they lack wings or a tail.",
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "str",
+          "name": "STR",
+          "url": "/api/ability-scores/str"
+        },
+        "bonus": 2
+      },
+      {
+        "ability_score": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/ability-scores/cha"
+        },
+        "bonus": 1
+      }
+    ],
+    "alignment": "Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil. Most dragonborn are good, but those who side with evil can be terrible villains.",
+    "age": "Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.",
+    "size": "Medium",
+    "size_description": "Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds. Your size is Medium.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "common",
+        "name": "Common",
+        "url": "/api/languages/common"
+      },
+      {
+        "index": "draconic",
+        "name": "Draconic",
+        "url": "/api/languages/draconic"
+      }
+    ],
+    "language_desc": "You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants.",
+    "traits": [
+      {
+        "index": "draconic-ancestry",
+        "name": "Draconic Ancestry",
+        "url": "/api/traits/draconic-ancestry"
+      },
+      {
+        "index": "breath-weapon",
+        "name": "Breath Weapon",
+        "url": "/api/traits/breath-weapon"
+      },
+      {
+        "index": "damage-resistance",
+        "name": "Damage Resistance",
+        "url": "/api/traits/damage-resistance"
+      }
+    ],
+    "subraces": [],
+    "url": "/api/races/dragonborn"
+  },
+  {
     "index": "dwarf",
     "name": "Dwarf",
     "speed": 25,
+    "brief": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
     "ability_bonuses": [
       {
         "ability_score": {
@@ -113,6 +175,7 @@
     "index": "elf",
     "name": "Elf",
     "speed": 30,
+    "brief": "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.",
     "ability_bonuses": [
       {
         "ability_score": {
@@ -174,279 +237,10 @@
     "url": "/api/races/elf"
   },
   {
-    "index": "halfling",
-    "name": "Halfling",
-    "speed": 25,
-    "ability_bonuses": [
-      {
-        "ability_score": {
-          "index": "dex",
-          "name": "DEX",
-          "url": "/api/ability-scores/dex"
-        },
-        "bonus": 2
-      }
-    ],
-    "age": "A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
-    "alignment": "Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.",
-    "size": "Small",
-    "size_description": "Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.",
-    "starting_proficiencies": [],
-    "languages": [
-      {
-        "index": "common",
-        "name": "Common",
-        "url": "/api/languages/common"
-      },
-      {
-        "index": "halfling",
-        "name": "Halfling",
-        "url": "/api/languages/halfling"
-      }
-    ],
-    "language_desc": "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.",
-    "traits": [
-      {
-        "index": "brave",
-        "name": "Brave",
-        "url": "/api/traits/brave"
-      },
-      {
-        "index": "halfling-nimbleness",
-        "name": "Halfling Nimbleness",
-        "url": "/api/traits/halfling-nimbleness"
-      },
-      {
-        "index": "lucky",
-        "name": "Lucky",
-        "url": "/api/traits/lucky"
-      }
-    ],
-    "subraces": [
-      {
-        "index": "lightfoot-halfling",
-        "name": "Lightfoot Halfling",
-        "url": "/api/subraces/lightfoot-halfling"
-      }
-    ],
-    "url": "/api/races/halfling"
-  },
-  {
-    "index": "human",
-    "name": "Human",
-    "speed": 30,
-    "ability_bonuses": [
-      {
-        "ability_score": {
-          "index": "str",
-          "name": "STR",
-          "url": "/api/ability-scores/str"
-        },
-        "bonus": 1
-      },
-      {
-        "ability_score": {
-          "index": "dex",
-          "name": "DEX",
-          "url": "/api/ability-scores/dex"
-        },
-        "bonus": 1
-      },
-      {
-        "ability_score": {
-          "index": "con",
-          "name": "CON",
-          "url": "/api/ability-scores/con"
-        },
-        "bonus": 1
-      },
-      {
-        "ability_score": {
-          "index": "int",
-          "name": "INT",
-          "url": "/api/ability-scores/int"
-        },
-        "bonus": 1
-      },
-      {
-        "ability_score": {
-          "index": "wis",
-          "name": "WIS",
-          "url": "/api/ability-scores/wis"
-        },
-        "bonus": 1
-      },
-      {
-        "ability_score": {
-          "index": "cha",
-          "name": "CHA",
-          "url": "/api/ability-scores/cha"
-        },
-        "bonus": 1
-      }
-    ],
-    "age": "Humans reach adulthood in their late teens and live less than a century.",
-    "alignment": "Humans tend toward no particular alignment. The best and the worst are found among them.",
-    "size": "Medium",
-    "size_description": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
-    "starting_proficiencies": [],
-    "languages": [
-      {
-        "index": "common",
-        "name": "Common",
-        "url": "/api/languages/common"
-      }
-    ],
-    "language_options": {
-      "choose": 1,
-      "type": "languages",
-      "from": [
-        {
-          "index": "dwarvish",
-          "name": "Dwarvish",
-          "url": "/api/languages/dwarvish"
-        },
-        {
-          "index": "elvish",
-          "name": "Elvish",
-          "url": "/api/languages/elvish"
-        },
-        {
-          "index": "giant",
-          "name": "Giant",
-          "url": "/api/languages/giant"
-        },
-        {
-          "index": "gnomish",
-          "name": "Gnomish",
-          "url": "/api/languages/gnomish"
-        },
-        {
-          "index": "goblin",
-          "name": "Goblin",
-          "url": "/api/languages/goblin"
-        },
-        {
-          "index": "halfling",
-          "name": "Halfling",
-          "url": "/api/languages/halfling"
-        },
-        {
-          "index": "orc",
-          "name": "Orc",
-          "url": "/api/languages/orc"
-        },
-        {
-          "index": "abyssal",
-          "name": "Abyssal",
-          "url": "/api/languages/abyssal"
-        },
-        {
-          "index": "celestial",
-          "name": "Celestial",
-          "url": "/api/languages/celestial"
-        },
-        {
-          "index": "draconic",
-          "name": "Draconic",
-          "url": "/api/languages/draconic"
-        },
-        {
-          "index": "deep-speech",
-          "name": "Deep Speech",
-          "url": "/api/languages/deep-speech"
-        },
-        {
-          "index": "infernal",
-          "name": "Infernal",
-          "url": "/api/languages/infernal"
-        },
-        {
-          "index": "primordial",
-          "name": "Primordial",
-          "url": "/api/languages/primordial"
-        },
-        {
-          "index": "sylvan",
-          "name": "Sylvan",
-          "url": "/api/languages/sylvan"
-        },
-        {
-          "index": "undercommon",
-          "name": "Undercommon",
-          "url": "/api/languages/undercommon"
-        }
-      ]
-    },
-    "language_desc": "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
-    "traits": [],
-    "subraces": [],
-    "url": "/api/races/human"
-  },
-  {
-    "index": "dragonborn",
-    "name": "Dragonborn",
-    "speed": 30,
-    "ability_bonuses": [
-      {
-        "ability_score": {
-          "index": "str",
-          "name": "STR",
-          "url": "/api/ability-scores/str"
-        },
-        "bonus": 2
-      },
-      {
-        "ability_score": {
-          "index": "cha",
-          "name": "CHA",
-          "url": "/api/ability-scores/cha"
-        },
-        "bonus": 1
-      }
-    ],
-    "alignment": "Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil. Most dragonborn are good, but those who side with evil can be terrible villains.",
-    "age": "Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.",
-    "size": "Medium",
-    "size_description": "Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds. Your size is Medium.",
-    "starting_proficiencies": [],
-    "languages": [
-      {
-        "index": "common",
-        "name": "Common",
-        "url": "/api/languages/common"
-      },
-      {
-        "index": "draconic",
-        "name": "Draconic",
-        "url": "/api/languages/draconic"
-      }
-    ],
-    "language_desc": "You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants.",
-    "traits": [
-      {
-        "index": "draconic-ancestry",
-        "name": "Draconic Ancestry",
-        "url": "/api/traits/draconic-ancestry"
-      },
-      {
-        "index": "breath-weapon",
-        "name": "Breath Weapon",
-        "url": "/api/traits/breath-weapon"
-      },
-      {
-        "index": "damage-resistance",
-        "name": "Damage Resistance",
-        "url": "/api/traits/damage-resistance"
-      }
-    ],
-    "subraces": [],
-    "url": "/api/races/dragonborn"
-  },
-  {
     "index": "gnome",
     "name": "Gnome",
     "speed": 25,
+    "brief": "A gnome's energy and enthusiasm for living shines through every inch of his or her tiny body.",
     "ability_bonuses": [
       {
         "ability_score": {
@@ -500,6 +294,7 @@
     "index": "half-elf",
     "name": "Half-Elf",
     "speed": 30,
+    "brief": "Half-elves combine what some say are the best qualities of their elf and human parents.",
     "ability_bonuses": [
       {
         "ability_score": {
@@ -767,9 +562,69 @@
     "url": "/api/races/half-elf"
   },
   {
+    "index": "halfling",
+    "name": "Halfling",
+    "speed": 25,
+    "brief": "The diminutive halflings survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense.",
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "dex",
+          "name": "DEX",
+          "url": "/api/ability-scores/dex"
+        },
+        "bonus": 2
+      }
+    ],
+    "age": "A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
+    "alignment": "Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.",
+    "size": "Small",
+    "size_description": "Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "common",
+        "name": "Common",
+        "url": "/api/languages/common"
+      },
+      {
+        "index": "halfling",
+        "name": "Halfling",
+        "url": "/api/languages/halfling"
+      }
+    ],
+    "language_desc": "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.",
+    "traits": [
+      {
+        "index": "brave",
+        "name": "Brave",
+        "url": "/api/traits/brave"
+      },
+      {
+        "index": "halfling-nimbleness",
+        "name": "Halfling Nimbleness",
+        "url": "/api/traits/halfling-nimbleness"
+      },
+      {
+        "index": "lucky",
+        "name": "Lucky",
+        "url": "/api/traits/lucky"
+      }
+    ],
+    "subraces": [
+      {
+        "index": "lightfoot-halfling",
+        "name": "Lightfoot Halfling",
+        "url": "/api/subraces/lightfoot-halfling"
+      }
+    ],
+    "url": "/api/races/halfling"
+  },
+  {
     "index": "half-orc",
     "name": "Half-Orc",
     "speed": 30,
+    "brief": "Some half-orcs rise to become proud leaders of the orc communities. Some venture into the world to prove their worth. Many of these become adventurers, achieving greatness for their mighty deeds.",
     "ability_bonuses": [
       {
         "ability_score": {
@@ -833,9 +688,163 @@
     "url": "/api/races/half-orc"
   },
   {
+    "index": "human",
+    "name": "Human",
+    "speed": 30,
+    "brief": "Humans are the most adaptable and ambitious people among the common races. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.",
+    "ability_bonuses": [
+      {
+        "ability_score": {
+          "index": "str",
+          "name": "STR",
+          "url": "/api/ability-scores/str"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "dex",
+          "name": "DEX",
+          "url": "/api/ability-scores/dex"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "con",
+          "name": "CON",
+          "url": "/api/ability-scores/con"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "int",
+          "name": "INT",
+          "url": "/api/ability-scores/int"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "wis",
+          "name": "WIS",
+          "url": "/api/ability-scores/wis"
+        },
+        "bonus": 1
+      },
+      {
+        "ability_score": {
+          "index": "cha",
+          "name": "CHA",
+          "url": "/api/ability-scores/cha"
+        },
+        "bonus": 1
+      }
+    ],
+    "age": "Humans reach adulthood in their late teens and live less than a century.",
+    "alignment": "Humans tend toward no particular alignment. The best and the worst are found among them.",
+    "size": "Medium",
+    "size_description": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.",
+    "starting_proficiencies": [],
+    "languages": [
+      {
+        "index": "common",
+        "name": "Common",
+        "url": "/api/languages/common"
+      }
+    ],
+    "language_options": {
+      "choose": 1,
+      "type": "languages",
+      "from": [
+        {
+          "index": "dwarvish",
+          "name": "Dwarvish",
+          "url": "/api/languages/dwarvish"
+        },
+        {
+          "index": "elvish",
+          "name": "Elvish",
+          "url": "/api/languages/elvish"
+        },
+        {
+          "index": "giant",
+          "name": "Giant",
+          "url": "/api/languages/giant"
+        },
+        {
+          "index": "gnomish",
+          "name": "Gnomish",
+          "url": "/api/languages/gnomish"
+        },
+        {
+          "index": "goblin",
+          "name": "Goblin",
+          "url": "/api/languages/goblin"
+        },
+        {
+          "index": "halfling",
+          "name": "Halfling",
+          "url": "/api/languages/halfling"
+        },
+        {
+          "index": "orc",
+          "name": "Orc",
+          "url": "/api/languages/orc"
+        },
+        {
+          "index": "abyssal",
+          "name": "Abyssal",
+          "url": "/api/languages/abyssal"
+        },
+        {
+          "index": "celestial",
+          "name": "Celestial",
+          "url": "/api/languages/celestial"
+        },
+        {
+          "index": "draconic",
+          "name": "Draconic",
+          "url": "/api/languages/draconic"
+        },
+        {
+          "index": "deep-speech",
+          "name": "Deep Speech",
+          "url": "/api/languages/deep-speech"
+        },
+        {
+          "index": "infernal",
+          "name": "Infernal",
+          "url": "/api/languages/infernal"
+        },
+        {
+          "index": "primordial",
+          "name": "Primordial",
+          "url": "/api/languages/primordial"
+        },
+        {
+          "index": "sylvan",
+          "name": "Sylvan",
+          "url": "/api/languages/sylvan"
+        },
+        {
+          "index": "undercommon",
+          "name": "Undercommon",
+          "url": "/api/languages/undercommon"
+        }
+      ]
+    },
+    "language_desc": "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
+    "traits": [],
+    "subraces": [],
+    "url": "/api/races/human"
+  },
+  {
     "index": "tiefling",
     "name": "Tiefling",
     "speed": 30,
+    "brief": "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.",
     "ability_bonuses": [
       {
         "ability_score": {
