@@ -4,7 +4,6 @@ import { Title, Text, Divider } from '@mantine/core';
 
 function ClassFeatures({ classFeatures, spellcasting, subclasses }) {
   const router = useRouter();
-  console.log(router);
   return (
     <div>
       {classFeatures.map((feature) => {

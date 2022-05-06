@@ -2,18 +2,20 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 import Race from '../../models/race';
+import Trait from '../../models/trait';
 
 import dbConnect from '../../lib/dbConnect';
 import { AspectRatio, Title, Text, Container } from '@mantine/core';
 
 import RaceFeatures from '../../components/races/RaceFeatures';
 
-function SingleRace({ race }) {
+function SingleRace({ race, raceTraits }) {
   const {
     index,
     name,
     speed,
     ability_bonuses,
+    ability_bonus_options,
     alignment,
     age,
     size_description,
@@ -46,6 +48,7 @@ function SingleRace({ race }) {
       <RaceFeatures
         index={index}
         ability_bonuses={ability_bonuses}
+        ability_bonus_options={ability_bonus_options}
         age={age}
         alignment={alignment}
         size_description={size_description}
@@ -53,6 +56,15 @@ function SingleRace({ race }) {
         language_desc={language_desc}
       />
       {/* Race Specific Traits */}
+      {traits &&
+        traits.map((trait) => (
+          <>
+            <Title order={4}>{trait.name}</Title>
+            {raceTraits.map((rt) => {
+              if (rt.index === trait.index) return <Text>{rt.desc}</Text>;
+            })}
+          </>
+        ))}
     </Container>
   );
 }
@@ -65,13 +77,13 @@ export async function getServerSideProps({ params }) {
   const race = await Race.findOne(params).lean();
   race._id = race._id.toString();
 
-  // Subraces
-  // const subclasses = await (
-  //   await Subclass.find().lean()
-  // ).filter((subclass) => subclass.class.index === race.index);
+  // Traits
+  const raceTraits = await (
+    await Trait.find().lean()
+  ).filter((trait) => trait.races.some((r) => r.index === race.index));
 
-  // subclasses.forEach((feature) => {
-  //   feature._id = feature._id.toString();
-  // });
-  return { props: { race } };
+  raceTraits.forEach((feature) => {
+    feature._id = feature._id.toString();
+  });
+  return { props: { race, raceTraits } };
 }

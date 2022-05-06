@@ -5,6 +5,7 @@ import { Title, Text, Divider } from '@mantine/core';
 function RaceFeatures({
   index,
   ability_bonuses,
+  ability_bonus_options,
   age,
   alignment,
   language_desc,
@@ -12,14 +13,20 @@ function RaceFeatures({
   speed,
 }) {
   const router = useRouter();
-  console.log('router:', router);
+  console.log('ability_bonus_options:', ability_bonus_options);
   return (
     <div>
       <Title order={4}>Ability Score Increase</Title>
       <Text>
         {index === 'human'
           ? 'Your ability scores each increase by 1.'
-          : ability_bonuses.map((bonus) => bonus.name).join(', ')}
+          : ability_bonuses
+              .map(
+                ({ bonus, ability_score }) => `+${bonus} ${ability_score.name}`
+              )
+              .join(', ')}
+        {index === 'half-elf' &&
+          ', and two other ability scores of your choice increase by 1.'}
       </Text>
 
       <Title order={4}>Age</Title>

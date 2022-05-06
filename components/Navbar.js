@@ -5,6 +5,7 @@ import {
   Autocomplete,
   Anchor,
   Badge,
+  Box,
   Burger,
   Button,
   Divider,
@@ -69,7 +70,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function Navbar({ dndClasses, races }) {
+function Navbar({ dndClasses }) {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles();
 
@@ -225,28 +226,12 @@ function Navbar({ dndClasses, races }) {
           <Accordion.Item label="Spells">
             <Anchor href="/spells">All spells</Anchor>
           </Accordion.Item>
-          <Accordion.Item label="Races">
-            <Anchor href="/races">Overview</Anchor>
-            {races && races.length > 0
-              ? races.map((c) => (
-                  <>
-                    <Divider my="xs" />
-                    <Anchor key={c.index} href={`/races/${c.index}`}>
-                      {c.name}
-                    </Anchor>
-                  </>
-                ))
-              : null}
-          </Accordion.Item>
         </Accordion>
-        <Button
-          variant="subtle"
-          size="md"
-          href="/login"
-          sx={{ paddingLeft: 15, color: '#000' }}
-        >
-          Login
-        </Button>
+        <Box sx={{ paddingLeft: 15, paddingTop: 12 }}>
+          <Anchor href="/races" sx={{ color: '#000' }}>
+            Races
+          </Anchor>
+        </Box>
         <Divider my="xs" />
         <Button
           variant="subtle"

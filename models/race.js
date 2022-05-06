@@ -18,6 +18,11 @@ const RaceSchema = new mongoose.Schema({
     required: true,
   },
   ability_bonuses: Array,
+  ability_bonus_options: {
+    choose: Number,
+    type: { type: String },
+    from: Array,
+  },
   alignment: {
     type: String,
     required: true,

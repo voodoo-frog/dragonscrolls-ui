@@ -2,11 +2,14 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const colors = require('colors');
 const dotenv = require('dotenv');
+
+const models = require('./models');
+
 const Class = require('./models/class');
 const Feature = require('./models/feature');
 const Race = require('./models/race');
 const Subclass = require('./models/subclass');
-const models = require('./models');
+const Trait = require('./models/trait');
 
 // Load env variables
 dotenv.config({ path: __dirname + '/.env.local' });
@@ -32,18 +35,27 @@ const races = JSON.parse(
 const subclasses = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/subclasses.json`, 'utf-8')
 );
+const traits = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/traits.json`, 'utf-8')
+);
 
 // Import into DB
 const importData = async () => {
   try {
-    models.forEach(async (model) => {
-      await model.deleteMany();
-    });
+    // models.forEach(async (model) => {
+    //   await model.deleteMany();
+    // });
+    await Class.deleteMany();
+    await Feature.deleteMany();
+    await Race.deleteMany();
+    await Subclass.deleteMany();
+    await Trait.deleteMany();
 
     await Class.insertMany(classes);
     await Feature.insertMany(features);
     await Race.insertMany(races);
     await Subclass.insertMany(subclasses);
+    await Trait.insertMany(traits);
 
     console.log('Data Imported...'.green.inverse);
     process.exit();
