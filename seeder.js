@@ -8,6 +8,7 @@ const models = require('./models');
 const Class = require('./models/class');
 const Feature = require('./models/feature');
 const Race = require('./models/race');
+const Spell = require('./models/spell');
 const Subclass = require('./models/subclass');
 const Trait = require('./models/trait');
 
@@ -32,6 +33,9 @@ const features = JSON.parse(
 const races = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/races.json`, 'utf-8')
 );
+const spells = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/spells.json`, 'utf-8')
+);
 const subclasses = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/subclasses.json`, 'utf-8')
 );
@@ -48,12 +52,14 @@ const importData = async () => {
     await Class.deleteMany();
     await Feature.deleteMany();
     await Race.deleteMany();
+    await Spell.deleteMany();
     await Subclass.deleteMany();
     await Trait.deleteMany();
 
     await Class.insertMany(classes);
     await Feature.insertMany(features);
     await Race.insertMany(races);
+    await Spell.insertMany(spells);
     await Subclass.insertMany(subclasses);
     await Trait.insertMany(traits);
 

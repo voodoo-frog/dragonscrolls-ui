@@ -12,8 +12,6 @@ function RaceFeatures({
   size_description,
   speed,
 }) {
-  const router = useRouter();
-  console.log('ability_bonus_options:', ability_bonus_options);
   return (
     <div>
       <Title order={4}>Ability Score Increase</Title>
