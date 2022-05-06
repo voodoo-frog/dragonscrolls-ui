@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 
 import Class from '../models/class';
 import dbConnect from '../lib/dbConnect';
+import Image from 'next/image';
 
 export default function Home({ classes }) {
   return (
@@ -17,6 +18,14 @@ export default function Home({ classes }) {
       </Head>
 
       <main className={styles.main}>
+        {/* <Image
+          src={`/images/dnd-party.png`}
+          layout="fill"
+          alt="dnd party"
+          objectFit="contain"
+          objectPosition="right"
+          style={{ zIndex: -1, marginTop: 100 }}
+        /> */}
         <h1>HOME PAGE</h1>
       </main>
     </div>

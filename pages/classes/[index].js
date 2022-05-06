@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 import Class from '../../models/class';
 import Feature from '../../models/feature';
+import Subclass from '../../models/subclass';
 
 import dbConnect from '../../lib/dbConnect';
 import { AspectRatio, Title, Text, Container } from '@mantine/core';
@@ -12,7 +13,7 @@ import ClassProficiencies from '../../components/classes/ClassProficiencies';
 import ClassHitPoints from '../../components/classes/ClassHitPoints';
 import ClassFeatures from '../../components/classes/ClassFeatures';
 
-function SingleClass({ singleClass, classFeatures }) {
+function SingleClass({ singleClass, classFeatures, subclasses }) {
   const {
     index,
     hit_die,
@@ -90,6 +91,7 @@ function SingleClass({ singleClass, classFeatures }) {
       <ClassFeatures
         classFeatures={classFeatures}
         spellcasting={spellcasting}
+        subclasses={subclasses}
       />
     </Container>
   );
@@ -99,9 +101,11 @@ export default SingleClass;
 export async function getServerSideProps({ params }) {
   await dbConnect();
 
+  // Class
   const singleClass = await Class.findOne(params).lean();
   singleClass._id = singleClass._id.toString();
 
+  // Class Features
   const features = await (
     await Feature.find().lean()
   ).filter((feature) => feature.class.index === singleClass.index);
@@ -114,5 +118,13 @@ export async function getServerSideProps({ params }) {
     ...new Map(features.map((item) => [item.name, item])).values(),
   ];
 
-  return { props: { singleClass, classFeatures } };
+  // Subclass
+  const subclasses = await (
+    await Subclass.find().lean()
+  ).filter((subclass) => subclass.class.index === singleClass.index);
+
+  subclasses.forEach((feature) => {
+    feature._id = feature._id.toString();
+  });
+  return { props: { singleClass, classFeatures, subclasses } };
 }
