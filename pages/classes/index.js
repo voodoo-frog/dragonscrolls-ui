@@ -79,7 +79,7 @@ export default Classes;
 export async function getServerSideProps() {
   await dbConnect();
 
-  /* find all the data in our database */
+  /* Classes */
   const result = await Class.find({});
   const res = result.map((doc) => {
     const dndClass = doc.toObject();

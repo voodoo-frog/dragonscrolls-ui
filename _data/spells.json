@@ -444,14 +444,49 @@
     "desc": [
       "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects. You can't animate any object larger than Huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points.",
       "As a bonus action, you can mentally command any creature you made with this spell if the creature is within 500 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.",
-      "##### Animated Object Statistics",
-      "| Size | HP | AC | Attack | Str | Dex |",
-      "|---|---|---|---|---|---|",
-      "| Tiny | 20 | 18 | +8 to hit, 1d4 + 4 damage | 4 | 18 |",
-      "| Small | 25 | 16 | +6 to hit, 1d8 + 2 damage | 6 | 14 |",
-      "| Medium | 40 | 13 | +5 to hit, 2d6 + 1 damage | 10 | 12 |",
-      "| Large | 50 | 10 | +6 to hit, 2d10 + 2 damage | 14 | 10 |",
-      "| Huge | 80 | 10 | +8 to hit, 2d12 + 4 damage | 18 | 6 |",
+      "### Animated Object Statistics",
+      [
+        {
+          "size": "Tiny",
+          "hp": "20",
+          "ac": "18",
+          "attack": "+8 to hit, 1d4 + 4 damage",
+          "str": "4",
+          "dex": "18"
+        },
+        {
+          "size": "Small",
+          "hp": "25",
+          "ac": "16",
+          "attack": "+6 to hit, 1d8 + 2 damage",
+          "str": "6",
+          "dex": "14"
+        },
+        {
+          "size": "Medium",
+          "hp": "40",
+          "ac": "13",
+          "attack": "+5 to hit, 2d6 + 1 damage",
+          "str": "10",
+          "dex": "12"
+        },
+        {
+          "size": "Large",
+          "hp": "50",
+          "ac": "10",
+          "attack": "+6 to hit, 2d10 + 2 damage",
+          "str": "14",
+          "dex": "10"
+        },
+        {
+          "size": "Huge",
+          "hp": "80",
+          "ac": "10",
+          "attack": "+8 to hit, 2d12 + 4 damage",
+          "str": "18",
+          "dex": "6"
+        }
+      ],
       "An animated object is a construct with AC, hit points, attacks, Strength, and Dexterity determined by its size. Its Constitution is 10 and its Intelligence and Wisdom are 3, and its Charisma is 1. Its speed is 30 feet; if the object lacks legs or other appendages it can use for locomotion, it instead has a flying speed of 30 feet and can hover. If the object is securely attached to a surface or a larger object, such as a chain bolted to a wall, its speed is 0. It has blindsight with a radius of 30 feet and is blind beyond that distance. When the animated object drops to 0 hit points, it reverts to its original object form, and any remaining damage carries over to its original object form.",
       "If you command an object to attack, it can make a single melee attack against a creature within 5 feet of it. It makes a slam attack with an attack bonus and bludgeoning damage determined by its size. The DM might rule that a specific object inflicts slashing or piercing damage based on its form."
     ],
@@ -2574,12 +2609,24 @@
     "desc": [
       "This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.",
       "An affected target can't take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn.",
-      "| d10 | Behavior |",
-      "|---|---|",
-      "| 1 | The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't take an action this turn. |",
-      "| 2-6 | The creature doesn't move or take actions this turn. |",
-      "| 7-8 | The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn. |",
-      "| 9-10 | The creature can act and move normally. |",
+      [
+        {
+          "d10": "1",
+          "behavior": "The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't take an action this turn."
+        },
+        {
+          "d10": "2-6",
+          "behavior": "The creature doesn't move or take actions this turn."
+        },
+        {
+          "d10": "7-8",
+          "behavior": "The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn."
+        },
+        {
+          "d10": "9-10",
+          "behavior": "The creature can act and move normally."
+        }
+      ],
       "At the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target."
     ],
     "higher_level": [
@@ -3134,31 +3181,79 @@
       "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don't have a clear path to the sky ends the spell early.",
       "When you cast the spell, you change the current weather conditions, which are determined by the DM based on the climate and season. You can change precipitation, temperature, and wind. It takes 1d4 x 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.",
       "When you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.",
-      "##### Precipitation",
-      "| Stage | Condition |",
-      "|---|---|",
-      "| 1 | Clear |",
-      "| 2 | Light clouds |",
-      "| 3 | Overcast or ground fog |",
-      "| 4 | Rain, hail, or snow |",
-      "| 5 | Torrential rain, driving hail, or blizzard |",
-      "##### Temperature",
-      "| Stage | Condition |",
-      "|---|---|",
-      "| 1 | Unbearable heat |",
-      "| 2 | Hot |",
-      "| 3 | Warm |",
-      "| 4 | Cool |",
-      "| 5 | Cold |",
-      "| 6 | Arctic cold |",
-      "##### Wind",
-      "| Stage | Condition |",
-      "|---|---|",
-      "| 1 | Calm |",
-      "| 2 | Moderate wind |",
-      "| 3 | Strong wind |",
-      "| 4 | Gale |",
-      "| 5 | Storm |"
+      "### Precipitation",
+      [
+        {
+          "stage": "1",
+          "condition": "Clear"
+        },
+        {
+          "stage": "2",
+          "condition": "Light Clouds"
+        },
+        {
+          "stage": "3",
+          "condition": "Overcast or ground fog"
+        },
+        {
+          "stage": "4",
+          "condition": "Rain, hail, or snow"
+        },
+        {
+          "stage": "5",
+          "condition": "Torrential rain, driving hail, or blizzard"
+        }
+      ],
+      "### Temperature",
+      [
+        {
+          "stage": "1",
+          "condition": "Unbearable heat"
+        },
+        {
+          "stage": "2",
+          "condition": "Hot"
+        },
+        {
+          "stage": "3",
+          "condition": "Warm"
+        },
+        {
+          "stage": "4",
+          "condition": "Cool"
+        },
+        {
+          "stage": "5",
+          "condition": "Cold"
+        },
+        {
+          "stage": "6",
+          "condition": "Arctic cold"
+        }
+      ],
+      "### Wind",
+      [
+        {
+          "stage": "1",
+          "condition": "Calm"
+        },
+        {
+          "stage": "2",
+          "condition": "Moderate wind"
+        },
+        {
+          "stage": "3",
+          "condition": "Strong wind"
+        },
+        {
+          "stage": "4",
+          "condition": "Gale"
+        },
+        {
+          "stage": "5",
+          "condition": "Storm"
+        }
+      ]
     ],
     "range": "Self",
     "components": ["V", "S", "M"],
@@ -3388,13 +3483,28 @@
     "desc": [
       "You pull wisps of shadow material from the Shadowfell to create a nonliving object of vegetable matter within range: soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 5-foot cube, and the object must be of a form and material that you have seen before.",
       "The duration depends on the object's material. If the object is composed of multiple materials, use the shortest duration.",
-      "| Material | Duration |",
-      "|---|---|",
-      "| Vegetable matter | 1 day |",
-      "| Stone or crystal | 12 hours |",
-      "| Precious metals | 1 hour |",
-      "| Gems | 10 minutes |",
-      "| Adamantine or mithral | 1 minute |",
+      [
+        {
+          "material": "Vegetable matter",
+          "duration": "1 day"
+        },
+        {
+          "material": "Stone or crystal",
+          "duration": "12 hours"
+        },
+        {
+          "material": "Precious metals",
+          "duration": "1 hour"
+        },
+        {
+          "material": "Gems",
+          "duration": "10 minutes"
+        },
+        {
+          "material": "Adamantine or mithral",
+          "duration": "1 minute"
+        }
+      ],
       "Using any material created by this spell as another spell's material component causes that spell to fail."
     ],
     "higher_level": [
@@ -11372,6 +11482,9 @@
     "casting_time": "1 action",
     "level": 7,
     "damage": {
+      "damage_type": {
+        "name": "Fire (...)"
+      },
       "damage_at_slot_level": {
         "7": "10d6"
       }
@@ -12025,22 +12138,64 @@
     "desc": [
       "You touch a dead humanoid or a piece of a dead humanoid. Provided that the creature has been dead no longer than 10 days, the spell forms a new adult body for it and then calls the soul to enter that body. If the target's soul isn't free or willing to do so, the spell fails.",
       "The magic fashions a new body for the creature to inhabit, which likely causes the creature's race to change. The DM rolls a d 100 and consults the following table to determine what form the creature takes when restored to life, or the DM chooses a form.",
-      "| d100 | Race |",
-      "|---|---|",
-      "| 01-04 | Dragonborn |",
-      "| 05-13 | Dwarf, hill |",
-      "| 14-21 | Dwarf, mountain |",
-      "| 22-25 | Elf, dark |",
-      "| 26-34 | Elf, high |",
-      "| 35-42 | Elf, wood |",
-      "| 43-46 | Gnome, forest |",
-      "| 47-52 | Gnome, rock |",
-      "| 53-56 | Half-elf |",
-      "| 57-60 | Half-orc |",
-      "| 61-68 | Halfling, lightfoot |",
-      "| 69-76 | Halfling, stout |",
-      "| 77-96 | Human |",
-      "| 97-00 | Tiefling |",
+      [
+        {
+          "d100": "01-04",
+          "race": "Dragonborn"
+        },
+        {
+          "d100": "05-13",
+          "race": "Dwarf, hill"
+        },
+        {
+          "d100": "14-21",
+          "race": "Dwarf, mountain"
+        },
+        {
+          "d100": "22-25",
+          "race": "Elf, dark"
+        },
+        {
+          "d100": "26-34",
+          "race": "Elf, high"
+        },
+        {
+          "d100": "35-42",
+          "race": "Elf, wood"
+        },
+        {
+          "d100": "43-46",
+          "race": "Gnome, forest"
+        },
+        {
+          "d100": "47-52",
+          "race": "Gnome, rock"
+        },
+        {
+          "d100": "53-56",
+          "race": "Half-elf"
+        },
+        {
+          "d100": "57-60",
+          "race": "Half-orc"
+        },
+        {
+          "d100": "61-68",
+          "race": "Halfling, lightfoot"
+        },
+        {
+          "d100": "69-76",
+          "race": "Halfling, stout"
+        },
+        {
+          "d100": "77-96",
+          "race": "Human"
+        },
+        {
+          "d100": "97-00",
+          "race": "Tiefling"
+        }
+      ],
       "The reincarnated creature recalls its former life and experiences. It retains the capabilities it had in its original form, except it exchanges its original race for the new one and changes its racial traits accordingly."
     ],
     "range": "Touch",
@@ -12531,17 +12686,34 @@
     "name": "Scrying",
     "desc": [
       "You can see and hear a particular creature you choose that is on the same plane of existence as you. The target must make a wisdom saving throw, which is modified by how well you know the target and the sort of physical connection you have to it. If a target knows you're casting this spell, it can fail the saving throw voluntarily if it wants to be observed.",
-      "| Knowledge | Save Modifier |",
-      "|---|---|",
-      "| Secondhand (you have heard of the target) | +5 |",
-      "| Firsthand (you have met the target) | +0 |",
-      "| Familiar (you know the target well) | -5 |",
-      "",
-      "| Connection | Save Modifier |",
-      "|---|---|",
-      "| Likeness or picture | -2 |",
-      "| Possession or garment | -4 |",
-      "| Body part, lock of hair, bit of nail, or the like | -10 |",
+      [
+        {
+          "knowledge": "Secondhand (you have heard of the target)",
+          "save modifier": "+5"
+        },
+        {
+          "knowledge": "Firsthand (you have met the target)",
+          "save modifier": "+0"
+        },
+        {
+          "knowledge": "Familiar (you know the target well)",
+          "save modifier": "-5"
+        }
+      ],
+      [
+        {
+          "connection": "Likeness or picture",
+          "save modifier": "-2"
+        },
+        {
+          "connection": "Possession or garment",
+          "save modifier": "-4"
+        },
+        {
+          "connection": "Body part, lock of hair, bit of nail, or the like",
+          "save modifier": "-10"
+        }
+      ],
       "On a successful save, the target isn't affected, and you can't use this spell against it again for 24 hours.",
       "On a failed save, the spell creates an invisible sensor within 10 feet of the target. You can see and hear through the sensor as if you were there. The sensor moves with the target, remaining within 10 feet of it for the duration. A creature that can see invisible objects sees the sensor as a luminous orb about the size of your fist.",
       "Instead of targeting a creature, you can choose a location you have seen before as the target of this spell. When you do, the sensor appears at that location and doesn't move."
@@ -14309,15 +14481,57 @@
     "desc": [
       "This spell instantly transports you and up to eight willing creatures of your choice that you can see within range, or a single object that you can see within range, to a destination you select. If you target an object, it must be able to fit entirely inside a 10-foot cube, and it can't be held or carried by an unwilling creature.",
       "The destination you choose must be known to you, and it must be on the same plane of existence as you. Your familiarity with the destination determines whether you arrive there successfully. The DM rolls d100 and consults the table.",
-      "| Familiarity | Mishap | Similar Area | Off Target | On Target |",
-      "|---|---|---|---|---|",
-      "| Permanent circle | -- | -- | -- | 01-100 |",
-      "| Associated object | -- | -- | -- | 01-100 |",
-      "| Very familiar | 01-05 | 06-13 | 14-24 | 25-100 |",
-      "| Seen casually | 01-33 | 34-43 | 44-53 | 54-100 |",
-      "| Viewed once | 01-43 | 44-53 | 54-73 | 74-100 |",
-      "| Description | 01-43 | 44-53 | 54-73 | 74-100 |",
-      "| False destination | 01-50 | 51-100 | -- | -- |",
+      [
+        {
+          "familiarity": "Permanent circle",
+          "mishap": "--",
+          "similar area": "--",
+          "off target": "--",
+          "on target": "01-100"
+        },
+        {
+          "familiarity": "Associated object",
+          "mishap": "--",
+          "similar area": "--",
+          "off target": "--",
+          "on target": "25-100"
+        },
+        {
+          "familiarity": "Very familiar",
+          "mishap": "01-05",
+          "similar area": "06-13",
+          "off target": "14-24",
+          "on target": "25-100"
+        },
+        {
+          "familiarity": "Seen casually",
+          "mishap": "01-33",
+          "similar area": "34-43",
+          "off target": "44-53",
+          "on target": "54-100"
+        },
+        {
+          "familiarity": "Viewed once",
+          "mishap": "01-43",
+          "similar area": "44-53",
+          "off target": "54-73",
+          "on target": "74-100"
+        },
+        {
+          "familiarity": "Description",
+          "mishap": "01-43",
+          "similar area": "44-53",
+          "off target": "54-73",
+          "on target": "74-100"
+        },
+        {
+          "familiarity": "False destination",
+          "mishap": "01-50",
+          "similar area": "51-100",
+          "off target": "--",
+          "on target": "--"
+        }
+      ],
       "***Familiarity.*** \"Permanent circle\" means a permanent teleportation circle whose sigil sequence you know.",
       "\"Associated object\" means that you possess an object taken from the desired destination within the last six months, such as a book from a wizard's library, bed linen from a royal suite, or a chunk of marble from a lich's secret tomb.",
       "\"Very familiar\" is a place you have been very often, a place you have carefully studied, or a place you can see when you cast the spell.",

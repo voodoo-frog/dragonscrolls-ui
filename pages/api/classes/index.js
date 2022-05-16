@@ -1,32 +1,32 @@
-import dbConnect from '../../../lib/dbConnect'
-import Class from '../../../models/Class'
+import dbConnect from '../../../lib/dbConnect';
+import Class from '../../../models/Class';
 
 export default async function handler(req, res) {
-  const { method } = req
+  const { method } = req;
 
-  await dbConnect()
+  await dbConnect();
 
   switch (method) {
     case 'GET':
       try {
-        const classes = await Class.find({}) /* find all the data in our database */
-        res.status(200).json({ success: true, data: classes })
+        /* find all the data in our database */
+        const classes = await Class.find({});
+        res.status(200).json({ success: true, data: classes });
       } catch (error) {
-        res.status(400).json({ success: false })
+        res.status(400).json({ success: false });
       }
-      break
+      break;
     case 'POST':
       try {
-        const dndClass = await Class.create(
-          req.body
-        ) /* create a new model in the database */
-        res.status(201).json({ success: true, data: dndClass })
+        /* create a new model in the database */
+        const dndClass = await Class.create(req.body);
+        res.status(201).json({ success: true, data: dndClass });
       } catch (error) {
-        res.status(400).json({ success: false })
+        res.status(400).json({ success: false });
       }
-      break
+      break;
     default:
-      res.status(400).json({ success: false })
-      break
+      res.status(400).json({ success: false });
+      break;
   }
 }

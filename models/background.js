@@ -9,6 +9,10 @@ const BackgroundSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  description: {
+    type: Array,
+    required: true,
+  },
   starting_proficiencies: {
     type: Array,
     required: true,
@@ -32,6 +36,10 @@ const BackgroundSchema = new mongoose.Schema({
       type: Array,
       required: true,
     },
+  },
+  suggested_characteristics: {
+    type: String,
+    required: true,
   },
   personality_traits: {
     choose: Number,

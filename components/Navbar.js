@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   createStyles,
   Accordion,
@@ -14,8 +14,10 @@ import {
   Group,
   MediaQuery,
   Menu,
+  Popover,
   Text,
 } from '@mantine/core';
+import { useHover } from '@mantine/hooks';
 import { SiDungeonsanddragons as Logo } from 'react-icons/si';
 import { AiOutlineSearch as Search } from 'react-icons/ai';
 
@@ -136,35 +138,91 @@ function Navbar({ dndClasses }) {
             <Group>
               <Group ml={50} spacing={5} className={classes.links}>
                 <Menu
+                  size="xs"
                   control={
-                    <Button variant="subtle" color="red">
+                    <Button
+                      component="a"
+                      href="/classes"
+                      variant="subtle"
+                      color="red"
+                    >
                       Classes
                     </Button>
                   }
                   trigger="hover"
-                  delay={500}
+                  delay={200}
                 >
-                  <Anchor href="/classes" className={classes.link}>
+                  <Menu.Item component="a" href="/classes">
                     Overview
-                  </Anchor>
+                  </Menu.Item>
                   {dndClasses && dndClasses.length > 0
                     ? dndClasses
                         .sort((nameA, nameB) => nameA.name - nameB.name)
                         .map((c) => (
                           <>
                             <Divider my="xs" />
-                            <Anchor
-                              className={classes.link}
+                            <Menu.Item
+                              component="a"
                               key={c.index}
                               href={`/classes/${c.index}`}
                             >
                               {c.name}
-                            </Anchor>
+                            </Menu.Item>
                           </>
                         ))
                     : null}
                 </Menu>
-                <Button href="/spells">Spells</Button>
+                <Menu
+                  size="xs"
+                  control={
+                    <Button
+                      component="a"
+                      href="/spells"
+                      variant="subtle"
+                      color="red"
+                    >
+                      Spells
+                    </Button>
+                  }
+                  trigger="hover"
+                  delay={200}
+                >
+                  <Menu.Item component="a" href="/spells">
+                    All Spells
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/abjuration">
+                    Abjuration
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/conjuration">
+                    Conjuration
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/divination">
+                    Divination
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/enchantment">
+                    Enchantment
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/evocation">
+                    Evocation
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/illusion">
+                    Illusion
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/necromancy">
+                    Necromancy
+                  </Menu.Item>
+                  <Divider my="xs" />{' '}
+                  <Menu.Item component="a" href="/spells/school/transmutation">
+                    Transmutation
+                  </Menu.Item>
+                </Menu>
                 <Button
                   component="a"
                   href="/races"
@@ -173,10 +231,10 @@ function Navbar({ dndClasses }) {
                 >
                   Races
                 </Button>
-                <Button href="/classes">Backgrounds</Button>
-                <Button href="/classes">Equipment</Button>
-                <Button href="/classes">Basic Rules</Button>
-                <Button href="/classes">Monsters</Button>
+                <Button>Backgrounds</Button>
+                <Button>Equipment</Button>
+                <Button>Basic Rules</Button>
+                <Button>Monsters</Button>
               </Group>
               <Autocomplete
                 className={classes.search}
@@ -223,11 +281,11 @@ function Navbar({ dndClasses }) {
                 ))
               : null}
           </Accordion.Item>
-          <Accordion.Item label="Spells">
-            <Anchor href="/spells">All spells</Anchor>
-          </Accordion.Item>
         </Accordion>
         <Box sx={{ paddingLeft: 15, paddingTop: 12 }}>
+          <Anchor href="/spells" sx={{ color: '#000' }}>
+            Spells
+          </Anchor>
           <Anchor href="/races" sx={{ color: '#000' }}>
             Races
           </Anchor>

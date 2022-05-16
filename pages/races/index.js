@@ -83,7 +83,7 @@ export default Races;
 export async function getServerSideProps() {
   await dbConnect();
 
-  /* find all the data in our database */
+  /* Races */
   const result = await Race.find({});
   const res = result.map((doc) => {
     const race = doc.toObject();
