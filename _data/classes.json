@@ -4,7 +4,7 @@
     "name": "Artificer",
     "hit_die": 8,
     "brief": "Masters of invention, artificers use ingenuity and magic to unlock extraordinary capabilities in objects.",
-    "description": "Masters of invention, artificers use ingenuity and magic to unlock extraordinary capabilities in objects. They see magic as a complex system waiting to be decoded and then harnessed in their spells and inventions. You can find everything you need to play one of these inventors in the next few sections.\n\nArtificers use a variety of tools to channel their arcane power. To cast a spell, an artificer might use alchemist's supplies to create a potent elixir, calligrapher's supplies to inscribe a sigil of power, or tinker's tools to craft a temporary charm. The magic of artificers is tied to their tools and their talents, and few other characters can produce the right tool for a job as well as an artificer.",
+    "desc": "Masters of invention, artificers use ingenuity and magic to unlock extraordinary capabilities in objects. They see magic as a complex system waiting to be decoded and then harnessed in their spells and inventions. You can find everything you need to play one of these inventors in the next few sections.\n\nArtificers use a variety of tools to channel their arcane power. To cast a spell, an artificer might use alchemist's supplies to create a potent elixir, calligrapher's supplies to inscribe a sigil of power, or tinker's tools to craft a temporary charm. The magic of artificers is tied to their tools and their talents, and few other characters can produce the right tool for a job as well as an artificer.",
     "primary_ability": [
       {
         "index": "int",
@@ -373,7 +373,7 @@
     "name": "Barbarian",
     "hit_die": 12,
     "brief": "A fierce warrior of primitive background who can enter a battle rage.",
-    "description": "For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
+    "desc": "For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
     "primary_ability": [
       {
         "index": "str",
@@ -574,7 +574,7 @@
     "index": "bard",
     "name": "Bard",
     "brief": "An inspiring magician whose power echoes the music of creation.",
-    "description": "Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain.",
+    "desc": "Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain.",
     "primary_ability": [
       {
         "index": "cha",
@@ -1125,7 +1125,7 @@
     "index": "cleric",
     "name": "Cleric",
     "brief": "A priestly champion who wields divine magic in service of a higher power.",
-    "description": "Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.",
+    "desc": "Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.",
     "primary_ability": [
       {
         "index": "wis",
@@ -1444,7 +1444,7 @@
     "index": "druid",
     "name": "Druid",
     "brief": "A priest of the Old Faith, wielding the powers of nature and adopting animal forms.",
-    "description": "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature's resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature's indomitable will.",
+    "desc": "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature's resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature's indomitable will.",
     "primary_ability": [
       {
         "index": "wis",
@@ -1766,7 +1766,7 @@
     "name": "Fighter",
     "hit_die": 10,
     "brief": "A master of martial combat, skilled with a variety of weapons and armor.",
-    "description": "Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face.",
+    "desc": "Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face.",
     "primary_ability": [
       {
         "index": "str",
@@ -2064,7 +2064,7 @@
     "name": "Monk",
     "hit_die": 8,
     "brief": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
-    "description": "Monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.",
+    "desc": "Monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.",
     "primary_ability": [
       {
         "index": "wis",
@@ -2403,7 +2403,7 @@
     "name": "Paladin",
     "hit_die": 10,
     "brief": "A holy warrior bound to a sacred oath.",
-    "description": "Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.",
+    "desc": "Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.",
     "primary_ability": [
       {
         "index": "cha",
@@ -2692,7 +2692,7 @@
     "name": "Ranger",
     "hit_die": 10,
     "brief": "A warrior who uses combats threats on the edges of civilization.",
-    "description": "Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.",
+    "desc": "Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.",
     "primary_ability": [
       {
         "index": "dex",
@@ -3029,7 +3029,7 @@
     "name": "Rogue",
     "hit_die": 8,
     "brief": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
-    "description": "Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.",
+    "desc": "Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.",
     "primary_ability": [
       {
         "index": "dex",
@@ -3369,7 +3369,7 @@
     "name": "Sorcerer",
     "hit_die": 6,
     "brief": "A spellcaster who draws on inherent magic from a gift or bloodline.",
-    "description": "Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. No one chooses sorcery; the power chooses the sorcerer.",
+    "desc": "Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. No one chooses sorcery; the power chooses the sorcerer.",
     "primary_ability": [
       {
         "index": "cha",
@@ -3619,7 +3619,7 @@
     "name": "Warlock",
     "hit_die": 8,
     "brief": "A wielder of magic that is derived from a bargain with an extraplanar entity.",
-    "description": "Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular.",
+    "desc": "Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular.",
     "primary_ability": [
       {
         "index": "cha",
@@ -3891,7 +3891,7 @@
     "name": "Wizard",
     "hit_die": 6,
     "brief": "A scholarly magic-user capable of manipulating the structures of reality.",
-    "description": "Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, brute-force mind control, and much more.",
+    "desc": "Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, brute-force mind control, and much more.",
     "primary_ability": [
       {
         "index": "int",

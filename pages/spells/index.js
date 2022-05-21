@@ -239,7 +239,7 @@ function Spells({ spells, spellCasters, schools }) {
       </Box>
 
       <Box>
-        <Accordion iconPosition="right">
+        <Accordion iconPosition="right" mb={50}>
           {filtered.length === 0 ? (
             <Accordion.Item label="No spells to display"></Accordion.Item>
           ) : (
@@ -353,6 +353,7 @@ function Spells({ spells, spellCasters, schools }) {
           )}
         </Accordion>
         <Pagination
+          position="center"
           value={activePage}
           page={activePage}
           onChange={(value) => setSearch({ ...search, activePage: value })}

@@ -18,7 +18,7 @@ function SingleClass({ singleClass, classFeatures, subclasses }) {
     index,
     hit_die,
     name,
-    description,
+    desc,
     saving_throws,
     proficiencies,
     proficiency_choices,
@@ -68,7 +68,7 @@ function SingleClass({ singleClass, classFeatures, subclasses }) {
           objectPosition="top"
         />
       </AspectRatio>
-      <Text>{description}</Text>
+      <Text>{desc}</Text>
       <Title order={2}>Class Features</Title>
       <Text>As a {index}, you gain the following class features.</Text>
       {/* Hit Points */}

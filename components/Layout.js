@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react';
 
 import Footer from './Footer';
 import Navbar from './Navbar';
-import { sorter } from '../lib/common';
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import { sorter, fetcher } from '../lib/common';
 
 function Layout({ children }) {
   const [dndClasses, setDndClasses] = useState([]);

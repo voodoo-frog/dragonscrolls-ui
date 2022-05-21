@@ -9,7 +9,7 @@ const BackgroundSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: {
+  desc: {
     type: Array,
     required: true,
   },
@@ -21,6 +21,10 @@ const BackgroundSchema = new mongoose.Schema({
     choose: Number,
     type: { type: String },
     from: Array,
+  },
+  starting_equipment_desc: {
+    type: String,
+    required: true,
   },
   starting_equipment: {
     type: Array,

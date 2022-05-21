@@ -46,11 +46,11 @@
 }
 
 .title,
-.description {
+.desc {
   text-align: center;
 }
 
-.description {
+.desc {
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;

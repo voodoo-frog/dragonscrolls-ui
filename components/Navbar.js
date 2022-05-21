@@ -231,7 +231,14 @@ function Navbar({ dndClasses }) {
                 >
                   Races
                 </Button>
-                <Button>Backgrounds</Button>
+                <Button
+                  component="a"
+                  href="/backgrounds"
+                  variant="subtle"
+                  color="red"
+                >
+                  Backgrounds
+                </Button>
                 <Button>Equipment</Button>
                 <Button>Basic Rules</Button>
                 <Button>Monsters</Button>

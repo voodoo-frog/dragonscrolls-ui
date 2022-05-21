@@ -14,7 +14,7 @@ const ClassSchema = new mongoose.Schema({
     required: true,
   },
   brief: String,
-  description: String,
+  desc: String,
   primary_ability: Array,
   proficiency_choices: Array,
   proficiencies: Array,
