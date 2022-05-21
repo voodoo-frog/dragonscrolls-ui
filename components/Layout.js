@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 import Footer from './Footer';
 import Navbar from './Navbar';
+import { sorter } from '../lib/common';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -13,11 +14,7 @@ function Layout({ children }) {
 
   useEffect(() => {
     if (classes) {
-      const sorted = classes.data.sort((a, b) => {
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
-        return 0;
-      });
+      const sorted = sorter(classes.data);
       setDndClasses(sorted);
     }
   }, [classes]);

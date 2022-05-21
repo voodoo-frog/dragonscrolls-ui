@@ -1,5 +1,6 @@
 import Race from '../../models/race';
 import dbConnect from '../../lib/dbConnect';
+import { sorter } from '../../lib/common';
 import Image from 'next/image';
 import {
   useMantineTheme,
@@ -90,11 +91,7 @@ export async function getServerSideProps() {
     race._id = race._id.toString();
     return race;
   });
-  const races = res.sort((a, b) => {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
-    return 0;
-  });
+  const races = sorter(res);
 
   return { props: { races: races } };
 }

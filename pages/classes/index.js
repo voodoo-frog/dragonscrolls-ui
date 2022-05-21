@@ -11,6 +11,7 @@ import {
   Text,
   Title,
 } from '@mantine/core';
+import { sorter } from '../../lib/common';
 
 function Classes({ classes }) {
   const theme = useMantineTheme();
@@ -86,11 +87,7 @@ export async function getServerSideProps() {
     dndClass._id = dndClass._id.toString();
     return dndClass;
   });
-  const classes = res.sort((a, b) => {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
-    return 0;
-  });
+  const classes = sorter(res);
 
   return { props: { classes: classes } };
 }

@@ -17,9 +17,10 @@ import {
   Popover,
   Text,
 } from '@mantine/core';
-import { useHover } from '@mantine/hooks';
+
 import { SiDungeonsanddragons as Logo } from 'react-icons/si';
 import { AiOutlineSearch as Search } from 'react-icons/ai';
+import { sorter } from '../lib/common';
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -75,6 +76,7 @@ const useStyles = createStyles((theme) => ({
 function Navbar({ dndClasses }) {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles();
+  const sortedClasses = sorter(dndClasses);
 
   return (
     <>
@@ -155,21 +157,19 @@ function Navbar({ dndClasses }) {
                   <Menu.Item component="a" href="/classes">
                     Overview
                   </Menu.Item>
-                  {dndClasses && dndClasses.length > 0
-                    ? dndClasses
-                        .sort((nameA, nameB) => nameA.name - nameB.name)
-                        .map((c) => (
-                          <>
-                            <Divider my="xs" />
-                            <Menu.Item
-                              component="a"
-                              key={c.index}
-                              href={`/classes/${c.index}`}
-                            >
-                              {c.name}
-                            </Menu.Item>
-                          </>
-                        ))
+                  {sortedClasses && sortedClasses.length > 0
+                    ? sortedClasses.map((c) => (
+                        <>
+                          <Divider my="xs" />
+                          <Menu.Item
+                            component="a"
+                            key={c.index}
+                            href={`/classes/${c.index}`}
+                          >
+                            {c.name}
+                          </Menu.Item>
+                        </>
+                      ))
                     : null}
                 </Menu>
                 <Menu

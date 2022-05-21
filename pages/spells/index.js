@@ -4,19 +4,18 @@ import Class from '../../models/class';
 import Spell from '../../models/spell';
 import MagicSchool from '../../models/magic_school';
 
-import styles from '../../styles/spells.module.css';
+import styles from '../../styles/Spells.module.css';
 
 import dbConnect from '../../lib/dbConnect';
+import { sorter } from '../../lib/common';
 
 import Image from 'next/image';
 
 import {
-  useMantineTheme,
   Accordion,
   Avatar,
   Button,
   Box,
-  Card,
   Container,
   Divider,
   Grid,
@@ -28,7 +27,6 @@ import {
   Text,
   TextInput,
   Title,
-  Stack,
 } from '@mantine/core';
 
 import { Remarkable } from 'remarkable';
@@ -38,43 +36,18 @@ const md = new Remarkable('full', {
 });
 
 function Spells({ spells, spellCasters, schools }) {
-  const theme = useMantineTheme();
-  const [name, setName] = useState('');
-  const [level, setLevel] = useState();
-  const [school, setSchool] = useState([]);
-  const [castingTime, setCastingTime] = useState([]);
-  const [activePage, setPage] = useState(1);
+  const [search, setSearch] = useState({
+    name: '',
+    level: null,
+    school: [],
+    castingTime: [],
+    activePage: 1,
+  });
 
   const [classFilter, setClassFilter] = useState([]);
-  const [categoryFilter, setCategoryFilter] = useState([]);
   const [filtered, setFiltered] = useState([...spells]);
 
-  const handleFilterByCategory = () => {
-    if (spells.length > 0) {
-      let filters = spells;
-      if (name.length) {
-        filters = filters.filter((spell) =>
-          spell.name.toLowerCase().includes(name.toLowerCase())
-        );
-      }
-      if (level !== undefined) {
-        filters = filters.filter((spell) => spell.level === level);
-      }
-      if (school.length) {
-        filters = filters.filter((spell) => school.includes(spell.school.name));
-      }
-      if (castingTime.length) {
-        const lowerCaseCastingTimes = castingTime.map((time) =>
-          time.toLowerCase()
-        );
-        filters = filters.filter((spell) =>
-          lowerCaseCastingTimes.includes(spell.casting_time.toLowerCase())
-        );
-      }
-      return setCategoryFilter(filters);
-      // return setFiltered(filters);
-    }
-  };
+  const { name, level, school, castingTime, activePage } = search;
 
   const handleFilterByClass = (className) => {
     if (classFilter.includes(className)) {
@@ -85,12 +58,15 @@ function Spells({ spells, spellCasters, schools }) {
   };
 
   const handleFilterReset = () => {
-    setName('');
-    setLevel(undefined);
-    setSchool([]);
-    setCastingTime([]);
+    setSearch({
+      class: '',
+      name: '',
+      level: null,
+      school: [],
+      castingTime: [],
+      activePage: 1,
+    });
     setClassFilter([]);
-    setCategoryFilter([]);
     setFiltered(spells);
   };
 
@@ -117,7 +93,34 @@ function Spells({ spells, spellCasters, schools }) {
   }
 
   useEffect(() => {
-    let spellList = categoryFilter.length ? categoryFilter : filtered;
+    let spellList = spells;
+    const handleFilterByCategory = (list) => {
+      if (list.length > 0) {
+        let filters = list;
+        if (name.length) {
+          filters = filters.filter((spell) =>
+            spell.name.toLowerCase().includes(name.toLowerCase())
+          );
+        }
+        if (level) {
+          filters = filters.filter((spell) => spell.level === level);
+        }
+        if (school.length) {
+          filters = filters.filter((spell) =>
+            school.includes(spell.school.name)
+          );
+        }
+        if (castingTime.length) {
+          const lowerCaseCastingTimes = castingTime.map((time) =>
+            time.toLowerCase()
+          );
+          filters = filters.filter((spell) =>
+            lowerCaseCastingTimes.includes(spell.casting_time.toLowerCase())
+          );
+        }
+        return setFiltered(filters);
+      }
+    };
 
     if (classFilter.length) {
       spellList = spellList.filter((spell) => {
@@ -125,21 +128,15 @@ function Spells({ spells, spellCasters, schools }) {
         return classFilter.some((c) => classes.includes(c));
       });
     }
-    // console.log('filtered list before category filter', spellList.length);
-    // if (categoryFilter.length) {
-    //   console.log('category list', categoryFilter);
-    //   console.log('spell list', spellList);
-    //   spellList = categoryFilter.some((c) => spellList.includes(c));
-    // }
 
-    // console.log('filtered list after category filter', spellList.length);
-    return setFiltered(spellList);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classFilter, filtered]);
+    return handleFilterByCategory(spellList);
+  }, [castingTime, classFilter, level, name, school, search, spells]);
 
   return (
     <div style={{ margin: 20 }}>
-      <h1>All Spells</h1>
+      <Title order={1} mb={15}>
+        All Spells
+      </Title>
       <Divider mb={30} />
       <Grid grow>
         {spellCasters.map((caster) => (
@@ -183,30 +180,38 @@ function Spells({ spells, spellCasters, schools }) {
               label="Spell Name"
               placeholder="Search spell names..."
               radius="xl"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setSearch({ ...search, name: e.target.value })}
             />
             <NumberInput
-              value={level}
-              min={0}
-              max={9}
               hideControls
+              value={level}
               label="Spell Level"
               placeholder="Select spell levels..."
+              min={0}
+              max={9}
               radius="xl"
-              onChange={(lvl) => setLevel(lvl)}
+              onChange={(value) => setSearch({ ...search, level: value })}
             />
             <MultiSelect
               clearable
-              data={schools.map((school) => school.name)}
+              searchable
+              value={school}
               label="Spell School"
               placeholder="Select spell schools..."
-              searchable
               nothingFound="Nothing found"
               radius="xl"
-              onChange={setSchool}
+              onChange={(value) => setSearch({ ...search, school: value })}
+              data={schools.map((school) => school.name)}
             />
             <MultiSelect
               clearable
+              searchable
+              value={castingTime}
+              label="Casting Time"
+              placeholder="Select casting times..."
+              nothingFound="Nothing found"
+              radius="xl"
+              onChange={(value) => setSearch({ ...search, castingTime: value })}
               data={[
                 '1 Action',
                 '1 Bonus Action',
@@ -218,32 +223,17 @@ function Spells({ spells, spellCasters, schools }) {
                 '12 Hours',
                 '24 Hours',
               ]}
-              label="Casting Time"
-              placeholder="Select casting times..."
-              searchable
-              nothingFound="Nothing found"
-              radius="xl"
-              onChange={setCastingTime}
             />
-            <Stack>
-              <Button
-                type="submit"
-                size="md"
-                sx={{ alignSelf: 'center' }}
-                onClick={handleFilterByCategory}
-              >
-                Filter Spells
-              </Button>
-              <Button
-                type="submit"
-                size="sm"
-                variant="subtle"
-                sx={{ alignSelf: 'center' }}
-                onClick={handleFilterReset}
-              >
-                Reset Filters
-              </Button>
-            </Stack>
+            <Button
+              type="submit"
+              color="red"
+              size="md"
+              my="auto"
+              sx={{ alignSelf: 'center' }}
+              onClick={handleFilterReset}
+            >
+              Reset Filters
+            </Button>
           </Group>
         </div>
       </Box>
@@ -256,7 +246,7 @@ function Spells({ spells, spellCasters, schools }) {
             filtered
               .map((spell) => (
                 <Accordion.Item
-                  key={spell.name}
+                  key={spell.index}
                   label={<AccordionLabel {...spell} />}
                 >
                   <Grid grow>
@@ -359,15 +349,13 @@ function Spells({ spells, spellCasters, schools }) {
                   )}
                 </Accordion.Item>
               ))
-              .filter((spell) => {
-                return true;
-              })
               .slice((activePage - 1) * 10, activePage * 10)
           )}
         </Accordion>
         <Pagination
+          value={activePage}
           page={activePage}
-          onChange={setPage}
+          onChange={(value) => setSearch({ ...search, activePage: value })}
           total={Math.ceil(filtered.length / 10)}
           color="red"
           withEdges
@@ -390,11 +378,7 @@ export async function getServerSideProps() {
       return spellcaster;
     })
     .filter((classObj) => classObj.spellcasting);
-  const spellCasters = spellCasterArray.sort((a, b) => {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
-    return 0;
-  });
+  const spellCasters = sorter(spellCasterArray);
 
   /* Spells */
   const spellResults = await Spell.find({});
@@ -403,24 +387,16 @@ export async function getServerSideProps() {
     spell._id = spell._id.toString();
     return spell;
   });
-  const spells = spellArr.sort((a, b) => {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
-    return 0;
-  });
+  const spells = sorter(spellArr);
 
-  /* Spells */
+  /* Schools */
   const schoolResults = await MagicSchool.find({});
   const schoolArr = schoolResults.map((doc) => {
     const school = doc.toObject();
     school._id = school._id.toString();
     return school;
   });
-  const schools = schoolArr.sort((a, b) => {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
-    return 0;
-  });
+  const schools = sorter(schoolArr);
 
   return {
     props: { spells: spells, spellCasters: spellCasters, schools: schools },

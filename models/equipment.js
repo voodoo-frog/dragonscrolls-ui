@@ -66,7 +66,7 @@ const EquipmentSchema = new mongoose.Schema({
   source_book: {
     type: String,
     required: true,
-    default: 'Player Handbook',
+    default: 'Basic Rules',
   },
 });
 
