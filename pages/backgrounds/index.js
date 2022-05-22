@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 
-// import styles from '../../styles/Backgrounds.module.css';
-
 import { sorter, fetcher } from '../../lib/common';
 
 import {
@@ -24,8 +22,6 @@ const md = new Remarkable('full', {
 function Backgrounds() {
   const [page, setPage] = useState(1);
   const [backgroundData, setBackgroundData] = useState([]);
-
-  console.log('backgroundData', backgroundData);
 
   const { data: backgrounds } = useSWR('/api/backgrounds', fetcher);
 

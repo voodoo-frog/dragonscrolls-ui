@@ -16,7 +16,6 @@ import {
   Avatar,
   Button,
   Box,
-  Container,
   Divider,
   Grid,
   Group,
@@ -41,13 +40,13 @@ function Spells({ spells, spellCasters, schools }) {
     level: null,
     school: [],
     castingTime: [],
-    activePage: 1,
+    page: 1,
   });
 
   const [classFilter, setClassFilter] = useState([]);
   const [filtered, setFiltered] = useState([...spells]);
 
-  const { name, level, school, castingTime, activePage } = search;
+  const { name, level, school, castingTime, page } = search;
 
   const handleFilterByClass = (className) => {
     if (classFilter.includes(className)) {
@@ -64,7 +63,7 @@ function Spells({ spells, spellCasters, schools }) {
       level: null,
       school: [],
       castingTime: [],
-      activePage: 1,
+      page: 1,
     });
     setClassFilter([]);
     setFiltered(spells);
@@ -102,7 +101,7 @@ function Spells({ spells, spellCasters, schools }) {
             spell.name.toLowerCase().includes(name.toLowerCase())
           );
         }
-        if (level) {
+        if (level || level === 0) {
           filters = filters.filter((spell) => spell.level === level);
         }
         if (school.length) {
@@ -128,9 +127,9 @@ function Spells({ spells, spellCasters, schools }) {
         return classFilter.some((c) => classes.includes(c));
       });
     }
-
+    setSearch((s) => ({ ...s, page: 1 }));
     return handleFilterByCategory(spellList);
-  }, [castingTime, classFilter, level, name, school, search, spells]);
+  }, [castingTime, classFilter, level, name, school, spells]);
 
   return (
     <div style={{ margin: 20 }}>
@@ -239,128 +238,130 @@ function Spells({ spells, spellCasters, schools }) {
       </Box>
 
       <Box>
-        <Accordion iconPosition="right" mb={50}>
-          {filtered.length === 0 ? (
-            <Accordion.Item label="No spells to display"></Accordion.Item>
-          ) : (
-            filtered
-              .map((spell) => (
-                <Accordion.Item
-                  key={spell.index}
-                  label={<AccordionLabel {...spell} />}
-                >
-                  <Grid grow>
-                    <Grid.Col span={3}>
-                      <strong>Level</strong>
-                      <br />
-                      {spell.level === 0 ? 'Cantrip' : spell.level}
-                    </Grid.Col>
-                    <Grid.Col span={3}>
-                      <strong>Casting Time</strong>
-                      <br />
-                      {spell.casting_time}
-                    </Grid.Col>
-                    <Grid.Col span={3}>
-                      <strong>Range / Area</strong>
-                      <br />
-                      {spell.range}
-                    </Grid.Col>
-                    <Grid.Col span={3}>
-                      <strong>Components</strong>
-                      <br />
-                      {spell.components.join(', ')}
-                      {spell.components.includes('M') && ' *'}
-                    </Grid.Col>
-                    <Grid.Col span={3}>
-                      <strong>Duration</strong>
-                      <br />
-                      {spell.duration}
-                    </Grid.Col>
-                    <Grid.Col span={3}>
-                      <strong>School</strong>
-                      <br />
-                      {spell.school.name}
-                    </Grid.Col>
-                    <Grid.Col span={3}>
-                      <strong>Attack / Save</strong>
-                      <br />
-                      {spell.attack_save}
-                    </Grid.Col>
-                    <Grid.Col span={3}>
-                      <strong>Damage / Effect</strong>
-                      <br />
-                      {spell.damage &&
-                        spell.damage.damage_type &&
-                        spell.damage.damage_type.name}
-                    </Grid.Col>
-                  </Grid>
-                  <Divider my="md" />
-                  {spell.desc.map((descItem, index) => {
-                    if (descItem instanceof Array) {
-                      const rows = [];
-                      const cols = [];
-                      descItem.map((item) => {
-                        const rowGroup = [];
-                        Object.entries(item).map(([key, value]) => {
-                          rowGroup.push(value);
-                          !cols.includes(key) && cols.push(key);
+        {filtered.length > 0 ? (
+          <>
+            <Accordion iconPosition="right" mb={50}>
+              {filtered
+                .map((spell) => (
+                  <Accordion.Item
+                    key={spell.index}
+                    label={<AccordionLabel {...spell} />}
+                  >
+                    <Grid grow>
+                      <Grid.Col span={3}>
+                        <strong>Level</strong>
+                        <br />
+                        {spell.level === 0 ? 'Cantrip' : spell.level}
+                      </Grid.Col>
+                      <Grid.Col span={3}>
+                        <strong>Casting Time</strong>
+                        <br />
+                        {spell.casting_time}
+                      </Grid.Col>
+                      <Grid.Col span={3}>
+                        <strong>Range / Area</strong>
+                        <br />
+                        {spell.range}
+                      </Grid.Col>
+                      <Grid.Col span={3}>
+                        <strong>Components</strong>
+                        <br />
+                        {spell.components.join(', ')}
+                        {spell.components.includes('M') && ' *'}
+                      </Grid.Col>
+                      <Grid.Col span={3}>
+                        <strong>Duration</strong>
+                        <br />
+                        {spell.duration}
+                      </Grid.Col>
+                      <Grid.Col span={3}>
+                        <strong>School</strong>
+                        <br />
+                        {spell.school.name}
+                      </Grid.Col>
+                      <Grid.Col span={3}>
+                        <strong>Attack / Save</strong>
+                        <br />
+                        {spell.attack_save}
+                      </Grid.Col>
+                      <Grid.Col span={3}>
+                        <strong>Damage / Effect</strong>
+                        <br />
+                        {spell.damage &&
+                          spell.damage.damage_type &&
+                          spell.damage.damage_type.name}
+                      </Grid.Col>
+                    </Grid>
+                    <Divider my="md" />
+                    {spell.desc.map((descItem, index) => {
+                      if (descItem instanceof Array) {
+                        const rows = [];
+                        const cols = [];
+                        descItem.map((item) => {
+                          const rowGroup = [];
+                          Object.entries(item).map(([key, value]) => {
+                            rowGroup.push(value);
+                            !cols.includes(key) && cols.push(key);
+                          });
+                          rows.push(rowGroup);
                         });
-                        rows.push(rowGroup);
-                      });
 
-                      return (
-                        <Table verticalSpacing="sm">
-                          <thead>
-                            <tr>
-                              {cols.map((col, i) => (
-                                <th key={i}>{col.toUpperCase()}</th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {rows.map((row, i) => (
-                              <tr key={i}>
-                                {row.map((r, j) => (
-                                  <td key={`${i}_${j}`}>{r}</td>
+                        return (
+                          <Table verticalSpacing="sm">
+                            <thead>
+                              <tr>
+                                {cols.map((col, i) => (
+                                  <th key={i}>{col.toUpperCase()}</th>
                                 ))}
                               </tr>
-                            ))}
-                          </tbody>
-                        </Table>
+                            </thead>
+                            <tbody>
+                              {rows.map((row, i) => (
+                                <tr key={i}>
+                                  {row.map((r, j) => (
+                                    <td key={`${i}_${j}`}>{r}</td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </Table>
+                        );
+                      }
+                      return (
+                        <div
+                          key={index}
+                          dangerouslySetInnerHTML={{
+                            __html: md.render(descItem),
+                          }}
+                        />
                       );
-                    }
-                    return (
-                      <div
-                        key={index}
-                        dangerouslySetInnerHTML={{
-                          __html: md.render(descItem),
-                        }}
-                      />
-                    );
-                  })}
-                  <Text>
-                    <strong>Classes:</strong>{' '}
-                    {spell.classes.map((c) => c.name).join(', ')}
-                  </Text>
-                  {spell.components.includes('M') && (
-                    <Text size="xs" weight="bold">
-                      * {spell.material}
+                    })}
+                    <Text>
+                      <strong>Classes:</strong>{' '}
+                      {spell.classes.map((c) => c.name).join(', ')}
                     </Text>
-                  )}
-                </Accordion.Item>
-              ))
-              .slice((activePage - 1) * 10, activePage * 10)
-          )}
-        </Accordion>
-        <Pagination
-          position="center"
-          value={activePage}
-          page={activePage}
-          onChange={(value) => setSearch({ ...search, activePage: value })}
-          total={Math.ceil(filtered.length / 10)}
-          color="red"
-          withEdges
-        />
+                    {spell.components.includes('M') && (
+                      <Text size="xs" weight="bold">
+                        * {spell.material}
+                      </Text>
+                    )}
+                  </Accordion.Item>
+                ))
+                .slice((page - 1) * 10, page * 10)}
+            </Accordion>
+            <Pagination
+              position="center"
+              value={page}
+              page={page}
+              onChange={(value) => setSearch({ ...search, page: value })}
+              total={Math.ceil(filtered.length / 10)}
+              color="red"
+              withEdges
+            />
+          </>
+        ) : (
+          <Text size="xl">No spells found</Text>
+        )}
       </Box>
     </div>
   );
@@ -371,15 +372,15 @@ export async function getServerSideProps() {
   await dbConnect();
 
   /* Classes */
-  const spellCaster = await Class.find({});
-  const spellCasterArray = spellCaster
+  const classResults = await Class.find({});
+  const classArr = classResults
     .map((doc) => {
-      const spellcaster = doc.toObject();
-      spellcaster._id = spellcaster._id.toString();
-      return spellcaster;
+      const classResults = doc.toObject();
+      classResults._id = classResults._id.toString();
+      return classResults;
     })
     .filter((classObj) => classObj.spellcasting);
-  const spellCasters = sorter(spellCasterArray);
+  const spellCasters = sorter(classArr);
 
   /* Spells */
   const spellResults = await Spell.find({});

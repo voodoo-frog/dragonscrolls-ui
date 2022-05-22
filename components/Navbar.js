@@ -80,7 +80,7 @@ function Navbar({ dndClasses }) {
 
   return (
     <>
-      <MediaQuery largerThan="md" styles={{ display: 'none' }}>
+      <MediaQuery largerThan="lg" styles={{ display: 'none' }}>
         <Group position="apart" style={{ padding: 10 }}>
           <Anchor
             href="/"
@@ -110,7 +110,7 @@ function Navbar({ dndClasses }) {
         </Group>
       </MediaQuery>
 
-      <MediaQuery smallerThan="md" styles={{ display: 'none' }}>
+      <MediaQuery smallerThan="lg" styles={{ display: 'none' }}>
         <Header height={56} className={classes.header} mb={60}>
           <div className={classes.inner}>
             <Group>
@@ -190,38 +190,22 @@ function Navbar({ dndClasses }) {
                   <Menu.Item component="a" href="/spells">
                     All Spells
                   </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/abjuration">
-                    Abjuration
-                  </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/conjuration">
-                    Conjuration
-                  </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/divination">
-                    Divination
-                  </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/enchantment">
-                    Enchantment
-                  </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/evocation">
-                    Evocation
-                  </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/illusion">
-                    Illusion
-                  </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/necromancy">
-                    Necromancy
-                  </Menu.Item>
-                  <Divider my="xs" />{' '}
-                  <Menu.Item component="a" href="/spells/school/transmutation">
-                    Transmutation
-                  </Menu.Item>
+                  {sortedClasses && sortedClasses.length > 0
+                    ? sortedClasses
+                        .filter((classObj) => classObj.spellcasting)
+                        .map((c) => (
+                          <>
+                            <Divider my="xs" />
+                            <Menu.Item
+                              component="a"
+                              key={c.index}
+                              href={`/spells/${c.index}`}
+                            >
+                              {c.name}
+                            </Menu.Item>
+                          </>
+                        ))
+                    : null}
                 </Menu>
                 <Button
                   component="a"
@@ -239,11 +223,36 @@ function Navbar({ dndClasses }) {
                 >
                   Backgrounds
                 </Button>
-                <Button>Equipment</Button>
-                <Button>Basic Rules</Button>
-                <Button>Monsters</Button>
+                <Button
+                  disabled
+                  // component="a"
+                  href="/equipment"
+                  variant="subtle"
+                  color="red"
+                >
+                  Equipment
+                </Button>
+                <Button
+                  disabled
+                  // component="a"
+                  href="/rules"
+                  variant="subtle"
+                  color="red"
+                >
+                  Basic Rules
+                </Button>
+                <Button
+                  disabled
+                  // component="a"
+                  href="/monsters"
+                  variant="subtle"
+                  color="red"
+                >
+                  Monsters
+                </Button>
               </Group>
               <Autocomplete
+                disabled
                 className={classes.search}
                 placeholder="Search"
                 icon={<Search size={16} />}
