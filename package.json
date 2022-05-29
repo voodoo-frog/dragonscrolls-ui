@@ -8,13 +8,16 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "node seeder.js -i",
-    "destroy-seed": "node jsconfig.seeder.json seeder.js -d"
+    "destroy-seed": "node seeder.js -d"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@mantine/core": "^4.1.4",
     "@mantine/form": "^4.1.4",
     "@mantine/hooks": "^4.1.4",
     "@mantine/next": "^4.1.4",
+    "@mui/material": "^5.8.1",
     "colors": "^1.4.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",

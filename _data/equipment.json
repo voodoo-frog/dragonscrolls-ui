@@ -1914,6 +1914,7 @@
       "unit": "gp"
     },
     "weight": 2,
+    "desc": ["A standard tool used to make calculations."],
     "url": "/api/equipment/abacus"
   },
   {
@@ -2005,6 +2006,9 @@
       "unit": "gp"
     },
     "weight": 1,
+    "desc": [
+      "Arrows are used with a weapon that has the ammunition property to make a ranged attack. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield."
+    ],
     "url": "/api/equipment/arrow"
   },
   {
@@ -2292,6 +2296,10 @@
       "unit": "gp"
     },
     "weight": 5,
+    "desc": [
+      "A backpack is a leather pack carried on the back, typically with straps to secure it. A backpack can hold 1 cubic foot/ 30 pounds of gear.",
+      "You can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack."
+    ],
     "url": "/api/equipment/backpack"
   },
   {
@@ -2337,6 +2345,9 @@
       "unit": "gp"
     },
     "weight": 70,
+    "desc": [
+      "A barrel can hold 40 gallons of liquid, or 4 cubic feet of solid material."
+    ],
     "url": "/api/equipment/barrel"
   },
   {
@@ -2357,6 +2368,7 @@
       "unit": "sp"
     },
     "weight": 2,
+    "desc": ["A basket can hold 2 cubic feet/40 pounds of gear."],
     "url": "/api/equipment/basket"
   },
   {
@@ -6021,6 +6033,7 @@
       "unit": "cp"
     },
     "weight": 10,
+    "desc": ["Standard feed typically consumed by a mount per day."],
     "url": "/api/equipment/animal-feed-1-day"
   },
   {

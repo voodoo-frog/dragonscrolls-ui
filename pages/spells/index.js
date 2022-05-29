@@ -1,5 +1,15 @@
 import { useState, useEffect } from 'react';
 
+import { styled } from '@mui/material/styles';
+import Checkbox from '@mui/material/Checkbox';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import ListItemText from '@mui/material/ListItemText';
+import MenuItem from '@mui/material/MenuItem';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+
 import Class from '../../models/class';
 import Spell from '../../models/spell';
 import MagicSchool from '../../models/magic_school';
@@ -19,14 +29,13 @@ import {
   Divider,
   Grid,
   Group,
-  MultiSelect,
   NumberInput,
   Pagination,
   Table,
   Text,
-  TextInput,
   Title,
 } from '@mantine/core';
+import { useDebouncedValue } from '@mantine/hooks';
 
 import { Remarkable } from 'remarkable';
 const md = new Remarkable('full', {
@@ -34,10 +43,28 @@ const md = new Remarkable('full', {
   typographer: true,
 });
 
+const StyledTextField = styled(TextField)({
+  'label + &': {
+    marginTop: 25,
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderRadius: 30,
+    },
+  },
+});
+
+const StyledSelect = styled(Select)({
+  borderRadius: 30,
+  'label + &': {
+    marginTop: 25,
+  },
+});
+
 function Spells({ spells, spellCasters, schools }) {
   const [search, setSearch] = useState({
     name: '',
-    level: null,
+    levels: [],
     school: [],
     castingTime: [],
     page: 1,
@@ -45,8 +72,33 @@ function Spells({ spells, spellCasters, schools }) {
 
   const [classFilter, setClassFilter] = useState([]);
   const [filtered, setFiltered] = useState([...spells]);
+  const [debounced] = useDebouncedValue(search, 500);
 
-  const { name, level, school, castingTime, page } = search;
+  const { name, levels, school, castingTime, page } = search;
+
+  const handleLevels = (e) => {
+    const { value } = e.target;
+    setSearch({
+      ...search,
+      levels: value instanceof String ? value.split(',') : value,
+    });
+  };
+
+  const handleSchools = (e) => {
+    const { value } = e.target;
+    setSearch({
+      ...search,
+      school: value instanceof String ? value.split(',') : value,
+    });
+  };
+
+  const handleCastingTimes = (e) => {
+    const { value } = e.target;
+    setSearch({
+      ...search,
+      castingTime: value instanceof String ? value.split(',') : value,
+    });
+  };
 
   const handleFilterByClass = (className) => {
     if (classFilter.includes(className)) {
@@ -96,20 +148,20 @@ function Spells({ spells, spellCasters, schools }) {
     const handleFilterByCategory = (list) => {
       if (list.length > 0) {
         let filters = list;
-        if (name.length) {
+        if (debounced.name.length) {
           filters = filters.filter((spell) =>
             spell.name.toLowerCase().includes(name.toLowerCase())
           );
         }
-        if (level || level === 0) {
-          filters = filters.filter((spell) => spell.level === level);
+        if (debounced.levels.length) {
+          filters = filters.filter((spell) => levels.includes(spell.level));
         }
-        if (school.length) {
+        if (debounced.school.length) {
           filters = filters.filter((spell) =>
             school.includes(spell.school.name)
           );
         }
-        if (castingTime.length) {
+        if (debounced.castingTime.length) {
           const lowerCaseCastingTimes = castingTime.map((time) =>
             time.toLowerCase()
           );
@@ -129,7 +181,21 @@ function Spells({ spells, spellCasters, schools }) {
     }
     setSearch((s) => ({ ...s, page: 1 }));
     return handleFilterByCategory(spellList);
-  }, [castingTime, classFilter, level, name, school, spells]);
+  }, [castingTime, classFilter, levels, name, school, spells, debounced]);
+
+  const casting_times = [
+    '1 Action',
+    '1 Bonus Action',
+    '1 Reaction',
+    '1 Minute',
+    '10 Minutes',
+    '1 Hour',
+    '8 Hours',
+    '12 Hours',
+    '24 Hours',
+  ];
+
+  const spell_levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <div style={{ margin: 20 }}>
@@ -173,62 +239,114 @@ function Spells({ spells, spellCasters, schools }) {
 
       <Box mx="auto">
         <div className={styles.form}>
-          <Group className={styles.formGroup} grow>
-            <TextInput
-              value={name}
-              label="Spell Name"
-              placeholder="Search spell names..."
-              radius="xl"
-              onChange={(e) => setSearch({ ...search, name: e.target.value })}
-            />
-            <NumberInput
-              hideControls
-              value={level}
-              label="Spell Level"
-              placeholder="Select spell levels..."
-              min={0}
-              max={9}
-              radius="xl"
-              onChange={(value) => setSearch({ ...search, level: value })}
-            />
-            <MultiSelect
-              clearable
-              searchable
-              value={school}
-              label="Spell School"
-              placeholder="Select spell schools..."
-              nothingFound="Nothing found"
-              radius="xl"
-              onChange={(value) => setSearch({ ...search, school: value })}
-              data={schools.map((school) => school.name)}
-            />
-            <MultiSelect
-              clearable
-              searchable
-              value={castingTime}
-              label="Casting Time"
-              placeholder="Select casting times..."
-              nothingFound="Nothing found"
-              radius="xl"
-              onChange={(value) => setSearch({ ...search, castingTime: value })}
-              data={[
-                '1 Action',
-                '1 Bonus Action',
-                '1 Reaction',
-                '1 Minute',
-                '10 Minutes',
-                '1 Hour',
-                '8 Hours',
-                '12 Hours',
-                '24 Hours',
-              ]}
-            />
+          <Group className={styles.formGroup}>
+            <FormControl variant="standard" className={styles.formControlText}>
+              <InputLabel shrink className={styles.inputLabel}>
+                Spell Name
+              </InputLabel>
+              <StyledTextField
+                id="name"
+                placeholder="Search Spell names..."
+                size="small"
+                value={name}
+                onChange={(e) => setSearch({ ...search, name: e.target.value })}
+              />
+            </FormControl>
+
+            <FormControl
+              variant="standard"
+              className={styles.formControlSelect}
+              size="small"
+            >
+              <InputLabel
+                shrink
+                htmlFor="levels-label"
+                className={styles.inputLabel}
+              >
+                Spell Level
+              </InputLabel>
+              <StyledSelect
+                labelId="levels-label"
+                id="levels"
+                multiple
+                value={levels}
+                onChange={handleLevels}
+                input={<OutlinedInput />}
+                renderValue={(selected) => selected.sort().join(', ')}
+              >
+                {spell_levels.map((lvl) => (
+                  <MenuItem key={lvl} value={lvl}>
+                    <Checkbox checked={levels.indexOf(lvl) > -1} />
+                    <ListItemText primary={lvl === 0 ? 'Cantrip' : lvl} />
+                  </MenuItem>
+                ))}
+              </StyledSelect>
+            </FormControl>
+
+            <FormControl
+              variant="standard"
+              className={styles.formControlSelect}
+              size="small"
+            >
+              <InputLabel
+                shrink
+                htmlFor="school-label"
+                className={styles.inputLabel}
+              >
+                Magic School
+              </InputLabel>
+              <StyledSelect
+                labelId="school-label"
+                id="school"
+                multiple
+                value={school}
+                onChange={handleSchools}
+                input={<OutlinedInput />}
+                renderValue={(selected) => selected.join(', ')}
+              >
+                {schools.map((s) => (
+                  <MenuItem key={s.name} value={s.name}>
+                    <Checkbox checked={school.indexOf(s.name) > -1} />
+                    <ListItemText primary={s.name} />
+                  </MenuItem>
+                ))}
+              </StyledSelect>
+            </FormControl>
+
+            <FormControl
+              variant="standard"
+              className={styles.formControlSelect}
+              size="small"
+            >
+              <InputLabel
+                shrink
+                htmlFor="casting-time-label"
+                className={styles.inputLabel}
+              >
+                Casting Time
+              </InputLabel>
+              <StyledSelect
+                labelId="casting-time-label"
+                id="casting-time"
+                multiple
+                value={castingTime}
+                onChange={handleCastingTimes}
+                input={<OutlinedInput />}
+                renderValue={(selected) => selected.join(', ')}
+              >
+                {casting_times.map((ct) => (
+                  <MenuItem key={ct} value={ct}>
+                    <Checkbox checked={castingTime.indexOf(ct) > -1} />
+                    <ListItemText primary={ct} />
+                  </MenuItem>
+                ))}
+              </StyledSelect>
+            </FormControl>
+
             <Button
               type="submit"
               color="red"
               size="md"
-              my="auto"
-              sx={{ alignSelf: 'center' }}
               onClick={handleFilterReset}
             >
               Reset Filters
@@ -236,6 +354,8 @@ function Spells({ spells, spellCasters, schools }) {
           </Group>
         </div>
       </Box>
+
+      <Divider my={30} />
 
       <Box>
         {filtered.length > 0 ? (

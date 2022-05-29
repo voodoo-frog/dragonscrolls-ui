@@ -27,9 +27,6 @@ function SingleRace({ race, raceTraits }) {
     source_book,
   } = race;
 
-  // useEffect(() => {
-  // }, []);
-
   return (
     <Container px="md">
       <Title order={1}>{name}</Title>

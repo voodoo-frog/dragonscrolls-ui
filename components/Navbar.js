@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import {
   createStyles,
   Accordion,
@@ -14,7 +14,6 @@ import {
   Group,
   MediaQuery,
   Menu,
-  Popover,
   Text,
 } from '@mantine/core';
 
@@ -224,8 +223,7 @@ function Navbar({ dndClasses }) {
                   Backgrounds
                 </Button>
                 <Button
-                  disabled
-                  // component="a"
+                  component="a"
                   href="/equipment"
                   variant="subtle"
                   color="red"

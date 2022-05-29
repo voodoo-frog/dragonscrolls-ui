@@ -23,6 +23,7 @@ const EquipmentSchema = new mongoose.Schema({
       required: true,
     },
   },
+  armor_category: String,
   gear_category: {
     index: String,
     name: String,
