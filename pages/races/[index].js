@@ -1,15 +1,16 @@
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 
 import Race from '../../models/race';
+import Subrace from '../../models/subrace';
 import Trait from '../../models/trait';
 
 import dbConnect from '../../lib/dbConnect';
 import { AspectRatio, Title, Text, Container } from '@mantine/core';
 
 import RaceFeatures from '../../components/races/RaceFeatures';
+import SubraceFeatures from '../../components/subraces/SubraceFeatures';
 
-function SingleRace({ race, raceTraits }) {
+function SingleRace({ race, raceTraits, raceSubraces, subraceTraits }) {
   const {
     index,
     name,
@@ -19,8 +20,6 @@ function SingleRace({ race, raceTraits }) {
     alignment,
     age,
     size_description,
-    starting_proficiencies,
-    starting_proficiency_options,
     language_desc,
     traits,
     subraces,
@@ -62,6 +61,27 @@ function SingleRace({ race, raceTraits }) {
             })}
           </>
         ))}
+      {/* Subrace Features */}
+      {subraces &&
+        subraces.map((subrace) => {
+          const sr = raceSubraces.find((rs) => rs.index === subrace.index);
+
+          return (
+            <SubraceFeatures
+              key={sr.index}
+              name={sr.name}
+              index={sr.index}
+              ability_bonuses={sr.ability_bonuses}
+              desc={sr.desc}
+              languages={sr.languages}
+              language_options={sr.language_options}
+              racial_traits={sr.racial_traits}
+              source_book={sr.source_book}
+              starting_proficiencies={sr.starting_proficiencies}
+              subraceTraits={subraceTraits}
+            />
+          );
+        })}
     </Container>
   );
 }
@@ -74,13 +94,37 @@ export async function getServerSideProps({ params }) {
   const race = await Race.findOne(params).lean();
   race._id = race._id.toString();
 
-  // Traits
-  const raceTraits = await (
-    await Trait.find().lean()
-  ).filter((trait) => trait.races.some((r) => r.index === race.index));
-
-  raceTraits.forEach((feature) => {
-    feature._id = feature._id.toString();
+  // Subraces
+  const subraces = await Subrace.find({}).lean();
+  const raceSubraces = subraces.filter((sr) => {
+    if (sr.race.index === params.index) {
+      sr._id = sr._id.toString();
+      return sr;
+    }
   });
-  return { props: { race, raceTraits } };
+
+  // Traits
+  const traitsArr = await (
+    await Trait.find().lean()
+  ).filter((trait) => (trait._id = trait._id.toString()));
+
+  const raceTraits = traitsArr.filter((trait) =>
+    trait.races.some((r) => r.index === race.index)
+  );
+
+  // Subrace Traits
+  const subraceTraits = raceSubraces.map((subrace) => {
+    return traitsArr.filter((trait) => {
+      return trait.subraces.some((c) => c.index === subrace.index);
+    });
+  });
+
+  return {
+    props: {
+      race,
+      raceTraits,
+      raceSubraces,
+      subraceTraits: subraceTraits[0] || null,
+    },
+  };
 }

@@ -147,6 +147,7 @@
       ],
       "type": "language"
     },
+    "language_desc": "You can read, speak, and write one additional language of your choice.",
     "racial_traits": [
       {
         "index": "elf-weapon-training",

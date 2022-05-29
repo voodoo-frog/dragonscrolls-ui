@@ -338,7 +338,7 @@ export async function getServerSideProps({ params }) {
       return spell;
     })
     .filter((spell) => spell.classes.some((c) => c.name === className));
-  let spells = sorter(spellArr);
+  const spells = sorter(spellArr);
 
   /* Schools */
   const schoolResults = await MagicSchool.find({});

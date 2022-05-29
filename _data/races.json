@@ -218,8 +218,13 @@
       },
       {
         "index": "fey-ancestry",
-        "name": "Fey Ancestry",
+        "name": "Keen Senses",
         "url": "/api/traits/fey-ancestry"
+      },
+      {
+        "index": "keen-senses",
+        "name": "Fey Ancestry",
+        "url": "/api/traits/keen-senses"
       },
       {
         "index": "trance",
