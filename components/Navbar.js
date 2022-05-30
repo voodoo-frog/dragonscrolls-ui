@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  createStyles,
   Accordion,
   Autocomplete,
   Anchor,
@@ -19,62 +18,13 @@ import {
 
 import { SiDungeonsanddragons as Logo } from 'react-icons/si';
 import { AiOutlineSearch as Search } from 'react-icons/ai';
+
 import { sorter } from '../lib/common';
 
-const useStyles = createStyles((theme) => ({
-  header: {
-    paddingLeft: theme.spacing.md,
-    paddingRight: theme.spacing.md,
-  },
-
-  inner: {
-    height: 56,
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-
-  links: {
-    [theme.fn.smallerThan('md')]: {
-      display: 'none',
-    },
-  },
-
-  menuBtn: {
-    color: 'red',
-  },
-
-  search: {
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
-  },
-
-  link: {
-    display: 'block',
-    lineHeight: 1,
-    padding: '8px 12px',
-    borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color:
-      theme.colorScheme === 'dark'
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 500,
-
-    '&:hover': {
-      backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
-    },
-  },
-}));
+import styles from '../styles/Navbar.module.css';
 
 function Navbar({ dndClasses }) {
   const [opened, setOpened] = useState(false);
-  const { classes } = useStyles();
   const sortedClasses = sorter(dndClasses);
 
   return (
@@ -110,8 +60,8 @@ function Navbar({ dndClasses }) {
       </MediaQuery>
 
       <MediaQuery smallerThan="lg" styles={{ display: 'none' }}>
-        <Header height={56} className={classes.header} mb={60}>
-          <div className={classes.inner}>
+        <Header height={60} px={16} mb={60}>
+          <Group position="apart">
             <Group>
               <Anchor
                 href="/"
@@ -137,7 +87,7 @@ function Navbar({ dndClasses }) {
             </Group>
 
             <Group>
-              <Group ml={50} spacing={5} className={classes.links}>
+              <Group ml={50} spacing={5}>
                 <Menu
                   size="xs"
                   control={
@@ -154,7 +104,7 @@ function Navbar({ dndClasses }) {
                   delay={200}
                 >
                   <Menu.Item component="a" href="/classes">
-                    Overview
+                    All Classes
                   </Menu.Item>
                   {sortedClasses && sortedClasses.length > 0
                     ? sortedClasses.map((c) => (
@@ -232,7 +182,7 @@ function Navbar({ dndClasses }) {
                 </Button>
                 <Button
                   disabled
-                  // component="a"
+                  component="a"
                   href="/rules"
                   variant="subtle"
                   color="red"
@@ -251,7 +201,6 @@ function Navbar({ dndClasses }) {
               </Group>
               <Autocomplete
                 disabled
-                className={classes.search}
                 placeholder="Search"
                 icon={<Search size={16} />}
                 data={[
@@ -265,7 +214,7 @@ function Navbar({ dndClasses }) {
                 ]}
               />
             </Group>
-          </div>
+          </Group>
         </Header>
       </MediaQuery>
 
@@ -277,13 +226,13 @@ function Navbar({ dndClasses }) {
         padding="sm"
         size="sm"
       >
-        <Anchor href="/" sx={{ paddingLeft: 15, color: '#000' }}>
+        <Anchor href="/" className={styles.sideNavLink}>
           Home
         </Anchor>
         <Divider my="xs" />
         <Accordion iconPosition="right">
           <Accordion.Item label="Classes">
-            <Anchor href="/classes">Overview</Anchor>
+            <Anchor href="/classes">All Classes</Anchor>
             {dndClasses && dndClasses.length > 0
               ? dndClasses.map((c) => (
                   <>
@@ -295,24 +244,47 @@ function Navbar({ dndClasses }) {
                 ))
               : null}
           </Accordion.Item>
+          <Accordion.Item label="Spells">
+            <Anchor href="/spells">All Spells</Anchor>
+            {sortedClasses && sortedClasses.length > 0
+              ? sortedClasses
+                  .filter((classObj) => classObj.spellcasting)
+                  .map((c) => (
+                    <>
+                      <Divider my="xs" />
+                      <Anchor key={c.index} href={`/spells/${c.index}`}>
+                        {c.name}
+                      </Anchor>
+                    </>
+                  ))
+              : null}
+          </Accordion.Item>
         </Accordion>
-        <Box sx={{ paddingLeft: 15, paddingTop: 12 }}>
-          <Anchor href="/spells" sx={{ color: '#000' }}>
-            Spells
-          </Anchor>
-          <Anchor href="/races" sx={{ color: '#000' }}>
-            Races
-          </Anchor>
+        <Box className={styles.sideNavItem}>
+          <Anchor href="/races">Races</Anchor>
         </Box>
         <Divider my="xs" />
-        <Button
-          variant="subtle"
-          size="md"
-          href="/login"
-          sx={{ paddingLeft: 15, color: '#000' }}
-        >
+        <Box className={styles.sideNavItem}>
+          <Anchor href="/backgrounds">Backgrounds</Anchor>
+        </Box>
+        <Divider my="xs" />
+        <Box className={styles.sideNavItem}>
+          <Button fullWidth href="/equipment">
+            Equipment
+          </Button>
+        </Box>
+        <Divider my="xs" />
+        <Box className={styles.sideNavItem}>
+          <Anchor href="/rules">Basic Rules</Anchor>
+        </Box>
+        <Divider my="xs" />
+        <Box className={styles.sideNavItem}>
+          <Anchor href="/monsters">Monsters</Anchor>
+        </Box>
+        <Divider my="xs" />
+        <Anchor href="/login" className={styles.sideNavLink}>
           Login
-        </Button>
+        </Anchor>
       </Drawer>
     </>
   );

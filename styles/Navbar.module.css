@@ -1,20 +1,17 @@
-.nav {
-  height: 50px;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.sideNavItem {
+  padding-left: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-weight: 500;
 }
 
-.nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
+.sideNavItem a {
+  height: 25px;
+  color: #000;
 }
 
-.nav ul li a {
-  margin: 5px 15px;
+.sideNavLink {
+  font-weight: 500;
+  padding-left: 15px;
+  color: #000;
 }
