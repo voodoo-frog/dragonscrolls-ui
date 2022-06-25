@@ -9,13 +9,14 @@ import Link from 'next/link';
 
 function Subclass({ singleSubclass, classFeatures }) {
   const { index, name, desc, source_book } = singleSubclass;
+  console.log('singleSubclass.class', singleSubclass.class);
 
   return (
     <Container px="md">
       <Title order={1}>{name}</Title>
       <AspectRatio ratio={720 / 1080} sx={{ maxWidth: 300 }} mx="auto">
         <Image
-          src={`/images/${singleSubclass.class.name}-${index}.png`}
+          src={`/images/${singleSubclass.class.index}-${index}.png`}
           layout="fill"
           alt={`${singleSubclass.class.name} - ${name} subclass`}
           objectFit="cover"

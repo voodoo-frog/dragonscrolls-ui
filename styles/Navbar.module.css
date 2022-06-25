@@ -1,5 +1,10 @@
+.header {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .sideNavItem {
-  padding-left: 15px;
+  padding-left: 16px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-weight: 500;
@@ -13,5 +18,13 @@
 .sideNavLink {
   font-weight: 500;
   padding-left: 15px;
+  color: #000;
+}
+
+.accordion {
+  margin-bottom: 10px;
+}
+
+.anchor {
   color: #000;
 }

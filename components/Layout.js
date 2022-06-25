@@ -1,5 +1,6 @@
 import useSWR from 'swr';
 import { useState, useEffect } from 'react';
+import styles from '../styles/Layout.module.css';
 
 // import Footer from './Footer';
 import Navbar from './Navbar';
@@ -18,11 +19,11 @@ function Layout({ children }) {
   }, [classes]);
 
   return (
-    <>
+    <div className={styles.main}>
       <Navbar dndClasses={dndClasses} />
       <main>{children}</main>
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
 export default Layout;

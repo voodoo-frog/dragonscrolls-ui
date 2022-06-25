@@ -30,7 +30,7 @@ function Navbar({ dndClasses }) {
   return (
     <>
       <MediaQuery largerThan="lg" styles={{ display: 'none' }}>
-        <Group position="apart" style={{ padding: 10 }}>
+        <Group position="apart" className={styles.header}>
           <Anchor
             href="/"
             style={{
@@ -53,6 +53,7 @@ function Navbar({ dndClasses }) {
             </Text>
           </Anchor>
           <Burger
+            color="#fff"
             opened={opened}
             onClick={() => setOpened((prevState) => !prevState)}
           />
@@ -60,7 +61,7 @@ function Navbar({ dndClasses }) {
       </MediaQuery>
 
       <MediaQuery smallerThan="lg" styles={{ display: 'none' }}>
-        <Header height={60} px={16} mb={60}>
+        <Header className={styles.header} height={70} px={16} mb={60}>
           <Group position="apart">
             <Group>
               <Anchor
@@ -230,14 +231,20 @@ function Navbar({ dndClasses }) {
           Home
         </Anchor>
         <Divider my="xs" />
-        <Accordion iconPosition="right">
+        <Accordion iconPosition="right" className={styles.accordion}>
           <Accordion.Item label="Classes">
-            <Anchor href="/classes">All Classes</Anchor>
+            <Anchor className={styles.anchor} href="/classes">
+              All Classes
+            </Anchor>
             {dndClasses && dndClasses.length > 0
               ? dndClasses.map((c) => (
                   <>
                     <Divider my="xs" />
-                    <Anchor key={c.index} href={`/classes/${c.index}`}>
+                    <Anchor
+                      key={c.index}
+                      className={styles.anchor}
+                      href={`/classes/${c.index}`}
+                    >
                       {c.name}
                     </Anchor>
                   </>
@@ -245,14 +252,20 @@ function Navbar({ dndClasses }) {
               : null}
           </Accordion.Item>
           <Accordion.Item label="Spells">
-            <Anchor href="/spells">All Spells</Anchor>
+            <Anchor className={styles.anchor} href="/spells">
+              All Spells
+            </Anchor>
             {sortedClasses && sortedClasses.length > 0
               ? sortedClasses
                   .filter((classObj) => classObj.spellcasting)
                   .map((c) => (
                     <>
                       <Divider my="xs" />
-                      <Anchor key={c.index} href={`/spells/${c.index}`}>
+                      <Anchor
+                        key={c.index}
+                        className={styles.anchor}
+                        href={`/spells/${c.index}`}
+                      >
                         {c.name}
                       </Anchor>
                     </>
@@ -269,9 +282,7 @@ function Navbar({ dndClasses }) {
         </Box>
         <Divider my="xs" />
         <Box className={styles.sideNavItem}>
-          <Button fullWidth href="/equipment">
-            Equipment
-          </Button>
+          <Anchor href="/equipment">Equipment</Anchor>
         </Box>
         <Divider my="xs" />
         <Box className={styles.sideNavItem}>
@@ -282,9 +293,9 @@ function Navbar({ dndClasses }) {
           <Anchor href="/monsters">Monsters</Anchor>
         </Box>
         <Divider my="xs" />
-        <Anchor href="/login" className={styles.sideNavLink}>
-          Login
-        </Anchor>
+        <Box className={styles.sideNavItem}>
+          <Anchor href="/login">Login</Anchor>
+        </Box>
       </Drawer>
     </>
   );

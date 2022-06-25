@@ -37,7 +37,7 @@ function Backgrounds() {
       <Title order={1} mb={15}>
         Backgrounds
       </Title>
-      <Divider mb={30} />
+      <Divider />
 
       <Box>
         <Accordion iconPosition="right" mb={50}>
