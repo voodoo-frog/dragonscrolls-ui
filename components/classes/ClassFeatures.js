@@ -2,33 +2,22 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Title, Text, Divider } from '@mantine/core';
 
-function ClassFeatures({ classFeatures, spellcasting, subclasses }) {
+function ClassFeatures({ classFeatures, subclasses }) {
   const router = useRouter();
   return (
     <div>
       {classFeatures.map((feature) => {
-        if (feature.subclass) return;
+        if (feature.subclass || feature.name === 'Spellcasting') return;
         return (
-          <>
-            <Title order={3} key={feature.index}>
-              {feature.name}
-            </Title>
+          <div key={feature.index}>
+            <Title order={3}>{feature.name}</Title>
             {feature.desc.map((desc, index) => (
               <Text key={index}>{desc}</Text>
             ))}
-            {feature.name === 'Spellcasting' &&
-              spellcasting.info.map((spellInfo) => (
-                <>
-                  <Title order={4}>{spellInfo.name}</Title>
-                  {spellInfo.desc.map((desc, index) => (
-                    <Text key={index}>{desc}</Text>
-                  ))}
-                </>
-              ))}
             {feature.category === 'subclass' && (
               <ul>
                 {subclasses.map((subclass) => (
-                  <>
+                  <div key={subclass.index}>
                     <div
                       style={{
                         display: 'flex',
@@ -53,11 +42,11 @@ function ClassFeatures({ classFeatures, spellcasting, subclasses }) {
                       </Link>
                     </div>
                     <Divider />
-                  </>
+                  </div>
                 ))}
               </ul>
             )}
-          </>
+          </div>
         );
       })}
     </div>

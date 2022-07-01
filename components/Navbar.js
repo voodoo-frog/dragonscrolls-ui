@@ -109,7 +109,7 @@ function Navbar({ dndClasses }) {
                   </Menu.Item>
                   {sortedClasses && sortedClasses.length > 0
                     ? sortedClasses.map((c) => (
-                        <>
+                        <div key={c.index}>
                           <Divider my="xs" />
                           <Menu.Item
                             component="a"
@@ -118,7 +118,7 @@ function Navbar({ dndClasses }) {
                           >
                             {c.name}
                           </Menu.Item>
-                        </>
+                        </div>
                       ))
                     : null}
                 </Menu>
@@ -144,7 +144,7 @@ function Navbar({ dndClasses }) {
                     ? sortedClasses
                         .filter((classObj) => classObj.spellcasting)
                         .map((c) => (
-                          <>
+                          <div key={c.index}>
                             <Divider my="xs" />
                             <Menu.Item
                               component="a"
@@ -153,7 +153,7 @@ function Navbar({ dndClasses }) {
                             >
                               {c.name}
                             </Menu.Item>
-                          </>
+                          </div>
                         ))
                     : null}
                 </Menu>
@@ -238,7 +238,7 @@ function Navbar({ dndClasses }) {
             </Anchor>
             {dndClasses && dndClasses.length > 0
               ? dndClasses.map((c) => (
-                  <>
+                  <div key={c.index}>
                     <Divider my="xs" />
                     <Anchor
                       key={c.index}
@@ -247,7 +247,7 @@ function Navbar({ dndClasses }) {
                     >
                       {c.name}
                     </Anchor>
-                  </>
+                  </div>
                 ))
               : null}
           </Accordion.Item>
@@ -259,7 +259,7 @@ function Navbar({ dndClasses }) {
               ? sortedClasses
                   .filter((classObj) => classObj.spellcasting)
                   .map((c) => (
-                    <>
+                    <div key={c.index}>
                       <Divider my="xs" />
                       <Anchor
                         key={c.index}
@@ -268,7 +268,7 @@ function Navbar({ dndClasses }) {
                       >
                         {c.name}
                       </Anchor>
-                    </>
+                    </div>
                   ))
               : null}
           </Accordion.Item>

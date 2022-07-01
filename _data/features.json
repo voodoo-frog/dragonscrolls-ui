@@ -1,5 +1,22 @@
 [
   {
+    "index": "spellcasting-artificer",
+    "class": {
+      "index": "artificer",
+      "name": "Artificer",
+      "url": "/api/classes/artificer"
+    },
+    "name": "Spellcasting",
+    "level": 1,
+    "prerequisites": [],
+    "desc": [
+      "You've studied the workings of magic and how to cast spells, channeling the magic through objects. To observers, you don't appear to be casting spells in a conventional way; you appear to produce wonders from mundane items and outlandish inventions."
+    ],
+    "reference": "/api/classes/artificer/spellcasting",
+    "url": "/api/features/spellcasting-artificer",
+    "source_book": "Eberron: Rising from the Last War"
+  },
+  {
     "index": "rage",
     "class": {
       "index": "barbarian",

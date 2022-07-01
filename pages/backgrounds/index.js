@@ -33,7 +33,7 @@ function Backgrounds() {
   }, [backgrounds]);
 
   return (
-    <div style={{ margin: 20 }}>
+    <div style={{ padding: 20, minHeight: '90vh' }}>
       <Title order={1} mb={15}>
         Backgrounds
       </Title>
@@ -230,13 +230,13 @@ function Backgrounds() {
           )}
         </Accordion>
         <Pagination
+          withEdges
+          color="red"
           position="center"
           value={page}
           page={page}
           onChange={(value) => setPage(value)}
           total={Math.ceil(backgroundData.length / 10)}
-          color="red"
-          withEdges
         />
       </Box>
     </div>

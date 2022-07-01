@@ -6,12 +6,15 @@ import Feature from '../../models/feature';
 import Subclass from '../../models/subclass';
 
 import dbConnect from '../../lib/dbConnect';
+import { sorter, createSet } from '../../lib/common';
+
 import { AspectRatio, Title, Text, Container } from '@mantine/core';
 
 import ClassEquipment from '../../components/classes/ClassEquipment';
 import ClassProficiencies from '../../components/classes/ClassProficiencies';
 import ClassHitPoints from '../../components/classes/ClassHitPoints';
 import ClassFeatures from '../../components/classes/ClassFeatures';
+import ClassSpellCastingFeatures from '../../components/classes/ClassSpellcastingFeatures';
 
 function SingleClass({ singleClass, classFeatures, subclasses }) {
   const {
@@ -87,12 +90,17 @@ function SingleClass({ singleClass, classFeatures, subclasses }) {
         starting_equipment={starting_equipment}
         starting_equipment_options={starting_equipment_options}
       />
+      {/* Class Spellcasting Features */}
+      {!!spellcasting && (
+        <ClassSpellCastingFeatures
+          spellDetails={classFeatures.find(
+            (feature) => feature.name === 'Spellcasting'
+          )}
+          spellcasting={spellcasting}
+        />
+      )}
       {/* Class Features */}
-      <ClassFeatures
-        classFeatures={classFeatures}
-        spellcasting={spellcasting}
-        subclasses={subclasses}
-      />
+      <ClassFeatures classFeatures={classFeatures} subclasses={subclasses} />
     </Container>
   );
 }
@@ -114,8 +122,10 @@ export async function getServerSideProps({ params }) {
     feature._id = feature._id.toString();
   });
 
+  const sortedFeatures = createSet(sorter(features, 'level', true));
+
   const classFeatures = [
-    ...new Map(features.map((item) => [item.name, item])).values(),
+    ...new Map(sortedFeatures.map((item) => [item.name, item])).values(),
   ];
 
   // Subclass
